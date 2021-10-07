@@ -14,5 +14,10 @@ namespace Mealz_Demo
         {
             InitializeComponent();
         }
+
+        private void frmOrders_M_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

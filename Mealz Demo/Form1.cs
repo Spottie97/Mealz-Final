@@ -21,6 +21,7 @@ namespace Mealz_Demo
         {
             var newForm = new frmMain_M();
             newForm.Show();
+            
         }
     }
 }

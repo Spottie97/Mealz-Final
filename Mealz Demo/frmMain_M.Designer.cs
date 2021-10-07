@@ -70,14 +70,14 @@ namespace Mealz_Demo
             // menuToolStripMenuItem1
             // 
             this.menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
-            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(191, 26);
+            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.menuToolStripMenuItem1.Text = "Menu";
             this.menuToolStripMenuItem1.Click += new System.EventHandler(this.menuToolStripMenuItem1_Click);
             // 
             // maintainMenuToolStripMenuItem
             // 
             this.maintainMenuToolStripMenuItem.Name = "maintainMenuToolStripMenuItem";
-            this.maintainMenuToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.maintainMenuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.maintainMenuToolStripMenuItem.Text = "Maintain Menu";
             this.maintainMenuToolStripMenuItem.Click += new System.EventHandler(this.maintainMenuToolStripMenuItem_Click);
             // 
@@ -127,6 +127,7 @@ namespace Mealz_Demo
             this.Name = "frmMain_M";
             this.Text = "Voorhuis Interface ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_M_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

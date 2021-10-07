@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Mealz_Demo
 {
@@ -65,6 +66,11 @@ namespace Mealz_Demo
             frmMaintainMenu_M myCon = new frmMaintainMenu_M();
             myCon.MdiParent = this;
             myCon.Show();
+        }
+
+        private void frmMain_M_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
