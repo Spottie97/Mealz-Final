@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mealz_Demo
 {
-    public partial class Form1 : Form
+    public partial class frmMenu_M : Form
     {
-        public Form1()
+        public frmMenu_M()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            var newForm = new frmMain_M();
-            newForm.Show();
+
         }
     }
 }
