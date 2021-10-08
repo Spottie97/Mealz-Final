@@ -36,7 +36,7 @@ namespace Mealz_Demo
 
                 conn.Open();
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock where stock_Id LIKE 'BR%'", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND WHERE menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -48,17 +48,14 @@ namespace Mealz_Demo
                 
                 while (red.Read())
                 {
-                    if(red.GetValue(2) == "True")
-                    {
-                        lstOutput.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
-                    }                 
+                    lstOutput.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));             
                 }
 
                 red.Close();
 
                 ///////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock where stock_Id LIKE 'IM%'", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND WHERE menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -83,7 +80,7 @@ namespace Mealz_Demo
 
                 //////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock where stock_Id LIKE 'NM%'", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND WHERE menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
