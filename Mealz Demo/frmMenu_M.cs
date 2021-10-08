@@ -108,5 +108,10 @@ namespace Mealz_Demo
                 MessageBox.Show(error.Message);
             }
         }
+
+        private void lstOutput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
