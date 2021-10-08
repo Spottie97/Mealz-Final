@@ -12,7 +12,7 @@ namespace Mealz_Demo
     public partial class frmStock_M : Form
     {
         public string stock_id;
-        public string test_update;
+
         public frmStock_M()
         {
             InitializeComponent();
@@ -22,7 +22,6 @@ namespace Mealz_Demo
         SqlCommand comm;
         DataSet ds;
         SqlDataAdapter adapt;
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -82,6 +81,9 @@ namespace Mealz_Demo
         {
             LoadAll();
             txtSearch.Text = "";
+            txtName.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -120,9 +122,9 @@ namespace Mealz_Demo
             {
                 conn.Open();
 
-                SqlCommand commdelete = new SqlCommand($"DELETE FROM tblStock WHERE stock_id = '{stock_id}'", conn);
-                SqlDataAdapter adapt = new SqlDataAdapter();
-                adapt.DeleteCommand = commdelete;
+                comm = new SqlCommand($"DELETE FROM tblStock WHERE stock_id = '{stock_id}'", conn);
+                adapt = new SqlDataAdapter();
+                adapt.DeleteCommand = comm;
                 adapt.DeleteCommand.ExecuteNonQuery();
 
                 conn.Close();
@@ -142,12 +144,28 @@ namespace Mealz_Demo
             myadd.ShowDialog();
         }
 
-        private void dbView_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void Update(string id, string name, string price, string quantity)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dbView.Rows[index];
-            stock_id = selectedRow.Cells[0].Value.ToString();
 
+        }
+
+        private void dbView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {           
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dbView.Rows[index];
+
+                stock_id = selectedRow.Cells[0].Value.ToString();
+                txtName.Text = selectedRow.Cells[1].Value.ToString();
+                txtPrice.Text = selectedRow.Cells[2].Value.ToString();
+                txtQuantity.Text = selectedRow.Cells[3].Value.ToString();
+
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("You cant select the header");
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -156,19 +174,18 @@ namespace Mealz_Demo
             {
                 conn.Open();
 
-                MessageBox.Show(test_update);
-                comm = new SqlCommand("UPDATE tblStock set stock_name='" + test_update + "' WHERE stock_id = '{stock_id}'", conn);
+                comm = new SqlCommand("UPDATE tblStock Set stock_name = @name, stock_price = @price, stock_quantity = '" + txtQuantity.Text + "' WHERE stock_id = @id", conn);
+                comm.Parameters.AddWithValue("@id", stock_id);
+                comm.Parameters.AddWithValue("@name", txtName.Text);
+                comm.Parameters.AddWithValue("@price", txtPrice.Text);
+
                 comm.ExecuteNonQuery();
-
-                MessageBox.Show("Record has been updated");
-
                 conn.Close();
             }
             catch (SqlException error)
             {
                 MessageBox.Show(error.Message);
             }
-
         }
     }
 }
