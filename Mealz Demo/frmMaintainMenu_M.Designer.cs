@@ -48,6 +48,7 @@ namespace Mealz_Demo
             this.dbView.RowTemplate.Height = 29;
             this.dbView.Size = new System.Drawing.Size(861, 305);
             this.dbView.TabIndex = 0;
+            this.dbView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbView_CellClick);
             this.dbView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnAdd
@@ -59,6 +60,7 @@ namespace Mealz_Demo
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
@@ -69,6 +71,7 @@ namespace Mealz_Demo
             this.btnRemove.TabIndex = 2;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // panel1
             // 

@@ -36,7 +36,7 @@ namespace Mealz_Demo
 
                 conn.Open();
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND WHERE menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price, menu FROM tblStock WHERE menu = 1 AND stock_Id LIKE 'BR%'", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -55,7 +55,7 @@ namespace Mealz_Demo
 
                 ///////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND WHERE menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -80,7 +80,7 @@ namespace Mealz_Demo
 
                 //////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND WHERE menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
