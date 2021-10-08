@@ -146,7 +146,7 @@ namespace Mealz_Demo
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Login Page";
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginPic2)).EndInit();
             this.ResumeLayout(false);
