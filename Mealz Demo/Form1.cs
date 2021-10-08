@@ -20,5 +20,10 @@ namespace Mealz_Demo
             var newForm = new frmMain_M();
             newForm.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
