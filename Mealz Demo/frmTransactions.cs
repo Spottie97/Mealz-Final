@@ -18,7 +18,9 @@ namespace Mealz_Demo
 
         private void frmTransactions_Load(object sender, EventArgs e)
         {
-            string student_id = "";
+            // Form myForm = new Form();
+
+            string studentId = ""; // string studentId = myForm.getStudentId();
             label1.Text = "studentName's transactions";
 
             string sqlConnectionString = ""; // Replace "" with the connection string to your database.
@@ -29,7 +31,7 @@ namespace Mealz_Demo
             string selectTransactions = "SELECT * FROM table WHERE student_id=@student_id";
             SqlCommand sqlCommand = new SqlCommand(selectTransactions, sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("@student_id", student_id);
+            sqlCommand.Parameters.AddWithValue("@student_id", studentId);
 
             SqlDataReader dataReader = sqlCommand.ExecuteReader();
 
