@@ -77,6 +77,25 @@ namespace Mealz_Demo
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderStatus.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblOrderStatus.Location = new System.Drawing.Point(218, 453);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(321, 25);
+            this.lblOrderStatus.TabIndex = 3;
+            this.lblOrderStatus.Text = "Your Order is being made...hang tight...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(113, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(510, 303);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // ClientOrderStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
