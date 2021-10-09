@@ -31,29 +31,33 @@ namespace Mealz_Demo
         {
             this.lblCreateName = new System.Windows.Forms.Label();
             this.lblHeadingCreateNew = new System.Windows.Forms.Label();
-            this.tbCreateStudNum = new System.Windows.Forms.TextBox();
+            this.txtStudentNum = new System.Windows.Forms.TextBox();
             this.lblCreateStudNum = new System.Windows.Forms.Label();
-            this.tbCreateCell = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
             this.lblCreateCell = new System.Windows.Forms.Label();
-            this.tbCreateEmail = new System.Windows.Forms.TextBox();
-            this.tbCreateSurname = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblCreateEmail = new System.Windows.Forms.Label();
             this.lblCreateSurname = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCreateAcc = new System.Windows.Forms.Button();
-            this.rbCreateManager = new System.Windows.Forms.RadioButton();
-            this.rbCreateEmployee = new System.Windows.Forms.RadioButton();
-            this.rbCreateCustomer = new System.Windows.Forms.RadioButton();
+            this.rbManager = new System.Windows.Forms.RadioButton();
+            this.rbEmployee = new System.Windows.Forms.RadioButton();
+            this.rbCustomer = new System.Windows.Forms.RadioButton();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCreateName
             // 
             this.lblCreateName.AutoSize = true;
             this.lblCreateName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateName.Location = new System.Drawing.Point(44, 95);
+            this.lblCreateName.Location = new System.Drawing.Point(50, 127);
             this.lblCreateName.Name = "lblCreateName";
-            this.lblCreateName.Size = new System.Drawing.Size(79, 20);
+            this.lblCreateName.Size = new System.Drawing.Size(101, 25);
             this.lblCreateName.TabIndex = 2;
             this.lblCreateName.Text = "Full Name:";
             // 
@@ -61,67 +65,73 @@ namespace Mealz_Demo
             // 
             this.lblHeadingCreateNew.AutoSize = true;
             this.lblHeadingCreateNew.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHeadingCreateNew.Location = new System.Drawing.Point(44, 32);
+            this.lblHeadingCreateNew.Location = new System.Drawing.Point(50, 43);
             this.lblHeadingCreateNew.Name = "lblHeadingCreateNew";
-            this.lblHeadingCreateNew.Size = new System.Drawing.Size(193, 28);
+            this.lblHeadingCreateNew.Size = new System.Drawing.Size(246, 35);
             this.lblHeadingCreateNew.TabIndex = 3;
             this.lblHeadingCreateNew.Text = "Create New Account:";
             // 
-            // tbCreateStudNum
+            // txtStudentNum
             // 
-            this.tbCreateStudNum.Location = new System.Drawing.Point(44, 385);
-            this.tbCreateStudNum.Name = "tbCreateStudNum";
-            this.tbCreateStudNum.Size = new System.Drawing.Size(240, 23);
-            this.tbCreateStudNum.TabIndex = 19;
+            this.txtStudentNum.Location = new System.Drawing.Point(50, 513);
+            this.txtStudentNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStudentNum.MaxLength = 8;
+            this.txtStudentNum.Name = "txtStudentNum";
+            this.txtStudentNum.Size = new System.Drawing.Size(274, 27);
+            this.txtStudentNum.TabIndex = 19;
             // 
             // lblCreateStudNum
             // 
             this.lblCreateStudNum.AutoSize = true;
             this.lblCreateStudNum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateStudNum.Location = new System.Drawing.Point(44, 362);
+            this.lblCreateStudNum.Location = new System.Drawing.Point(50, 483);
             this.lblCreateStudNum.Name = "lblCreateStudNum";
-            this.lblCreateStudNum.Size = new System.Drawing.Size(121, 20);
+            this.lblCreateStudNum.Size = new System.Drawing.Size(154, 25);
             this.lblCreateStudNum.TabIndex = 18;
             this.lblCreateStudNum.Text = "Student Number:";
             // 
-            // tbCreateCell
+            // txtNumber
             // 
-            this.tbCreateCell.Location = new System.Drawing.Point(44, 319);
-            this.tbCreateCell.Name = "tbCreateCell";
-            this.tbCreateCell.Size = new System.Drawing.Size(240, 23);
-            this.tbCreateCell.TabIndex = 17;
+            this.txtNumber.Location = new System.Drawing.Point(50, 425);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumber.MaxLength = 10;
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(274, 27);
+            this.txtNumber.TabIndex = 17;
             // 
             // lblCreateCell
             // 
             this.lblCreateCell.AutoSize = true;
             this.lblCreateCell.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateCell.Location = new System.Drawing.Point(44, 296);
+            this.lblCreateCell.Location = new System.Drawing.Point(50, 395);
             this.lblCreateCell.Name = "lblCreateCell";
-            this.lblCreateCell.Size = new System.Drawing.Size(95, 20);
+            this.lblCreateCell.Size = new System.Drawing.Size(122, 25);
             this.lblCreateCell.TabIndex = 16;
             this.lblCreateCell.Text = "Cell Number:";
             // 
-            // tbCreateEmail
+            // txtEmail
             // 
-            this.tbCreateEmail.Location = new System.Drawing.Point(44, 251);
-            this.tbCreateEmail.Name = "tbCreateEmail";
-            this.tbCreateEmail.Size = new System.Drawing.Size(240, 23);
-            this.tbCreateEmail.TabIndex = 15;
+            this.txtEmail.Location = new System.Drawing.Point(50, 335);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(274, 27);
+            this.txtEmail.TabIndex = 15;
             // 
-            // tbCreateSurname
+            // txtSurname
             // 
-            this.tbCreateSurname.Location = new System.Drawing.Point(44, 183);
-            this.tbCreateSurname.Name = "tbCreateSurname";
-            this.tbCreateSurname.Size = new System.Drawing.Size(240, 23);
-            this.tbCreateSurname.TabIndex = 14;
+            this.txtSurname.Location = new System.Drawing.Point(50, 244);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(274, 27);
+            this.txtSurname.TabIndex = 14;
             // 
             // lblCreateEmail
             // 
             this.lblCreateEmail.AutoSize = true;
             this.lblCreateEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateEmail.Location = new System.Drawing.Point(44, 228);
+            this.lblCreateEmail.Location = new System.Drawing.Point(50, 304);
             this.lblCreateEmail.Name = "lblCreateEmail";
-            this.lblCreateEmail.Size = new System.Drawing.Size(106, 20);
+            this.lblCreateEmail.Size = new System.Drawing.Size(134, 25);
             this.lblCreateEmail.TabIndex = 13;
             this.lblCreateEmail.Text = "Email Address:";
             // 
@@ -129,96 +139,147 @@ namespace Mealz_Demo
             // 
             this.lblCreateSurname.AutoSize = true;
             this.lblCreateSurname.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateSurname.Location = new System.Drawing.Point(44, 160);
+            this.lblCreateSurname.Location = new System.Drawing.Point(50, 213);
             this.lblCreateSurname.Name = "lblCreateSurname";
-            this.lblCreateSurname.Size = new System.Drawing.Size(70, 20);
+            this.lblCreateSurname.Size = new System.Drawing.Size(91, 25);
             this.lblCreateSurname.TabIndex = 12;
             this.lblCreateSurname.Text = "Surname:";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 23);
-            this.textBox1.TabIndex = 20;
+            this.txtName.Location = new System.Drawing.Point(50, 157);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(274, 27);
+            this.txtName.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(44, 430);
+            this.label1.Location = new System.Drawing.Point(50, 573);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 20);
+            this.label1.Size = new System.Drawing.Size(298, 25);
             this.label1.TabIndex = 23;
             this.label1.Text = "Please indicate your account type:";
             // 
-            // btnCreateAcc
+            // rbManager
             // 
-            this.btnCreateAcc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCreateAcc.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnCreateAcc.Location = new System.Drawing.Point(450, 540);
-            this.btnCreateAcc.Name = "btnCreateAcc";
-            this.btnCreateAcc.Size = new System.Drawing.Size(189, 53);
-            this.btnCreateAcc.TabIndex = 25;
-            this.btnCreateAcc.Text = "Create";
-            this.btnCreateAcc.UseVisualStyleBackColor = true;
+            this.rbManager.AutoSize = true;
+            this.rbManager.Location = new System.Drawing.Point(50, 632);
+            this.rbManager.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbManager.Name = "rbManager";
+            this.rbManager.Size = new System.Drawing.Size(89, 24);
+            this.rbManager.TabIndex = 26;
+            this.rbManager.TabStop = true;
+            this.rbManager.Text = "Manager";
+            this.rbManager.UseVisualStyleBackColor = true;
             // 
-            // rbCreateManager
+            // rbEmployee
             // 
-            this.rbCreateManager.AutoSize = true;
-            this.rbCreateManager.Location = new System.Drawing.Point(44, 474);
-            this.rbCreateManager.Name = "rbCreateManager";
-            this.rbCreateManager.Size = new System.Drawing.Size(72, 19);
-            this.rbCreateManager.TabIndex = 26;
-            this.rbCreateManager.TabStop = true;
-            this.rbCreateManager.Text = "Manager";
-            this.rbCreateManager.UseVisualStyleBackColor = true;
+            this.rbEmployee.AutoSize = true;
+            this.rbEmployee.Location = new System.Drawing.Point(199, 632);
+            this.rbEmployee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbEmployee.Name = "rbEmployee";
+            this.rbEmployee.Size = new System.Drawing.Size(96, 24);
+            this.rbEmployee.TabIndex = 27;
+            this.rbEmployee.TabStop = true;
+            this.rbEmployee.Text = "Employee";
+            this.rbEmployee.UseVisualStyleBackColor = true;
             // 
-            // rbCreateEmployee
+            // rbCustomer
             // 
-            this.rbCreateEmployee.AutoSize = true;
-            this.rbCreateEmployee.Location = new System.Drawing.Point(174, 474);
-            this.rbCreateEmployee.Name = "rbCreateEmployee";
-            this.rbCreateEmployee.Size = new System.Drawing.Size(77, 19);
-            this.rbCreateEmployee.TabIndex = 27;
-            this.rbCreateEmployee.TabStop = true;
-            this.rbCreateEmployee.Text = "Employee";
-            this.rbCreateEmployee.UseVisualStyleBackColor = true;
+            this.rbCustomer.AutoSize = true;
+            this.rbCustomer.Location = new System.Drawing.Point(353, 632);
+            this.rbCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbCustomer.Name = "rbCustomer";
+            this.rbCustomer.Size = new System.Drawing.Size(150, 24);
+            this.rbCustomer.TabIndex = 28;
+            this.rbCustomer.TabStop = true;
+            this.rbCustomer.Text = "Customer/Student";
+            this.rbCustomer.UseVisualStyleBackColor = true;
             // 
-            // rbCreateCustomer
+            // btnCreate
             // 
-            this.rbCreateCustomer.AutoSize = true;
-            this.rbCreateCustomer.Location = new System.Drawing.Point(309, 474);
-            this.rbCreateCustomer.Name = "rbCreateCustomer";
-            this.rbCreateCustomer.Size = new System.Drawing.Size(123, 19);
-            this.rbCreateCustomer.TabIndex = 28;
-            this.rbCreateCustomer.TabStop = true;
-            this.rbCreateCustomer.Text = "Customer/Student";
-            this.rbCreateCustomer.UseVisualStyleBackColor = true;
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(540, 718);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(197, 69);
+            this.btnCreate.TabIndex = 29;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // txtCode
+            // 
+            this.txtCode.ForeColor = System.Drawing.Color.Silver;
+            this.txtCode.Location = new System.Drawing.Point(490, 436);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(187, 27);
+            this.txtCode.TabIndex = 30;
+            this.txtCode.Text = "Manager/Employee only";
+            this.txtCode.TextChanged += new System.EventHandler(this.txtCode_TextChanged);
+            this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
+            this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(505, 408);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 25);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Verification Code";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(475, 533);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(219, 27);
+            this.txtPass.TabIndex = 32;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(530, 494);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Password";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Create_NewAcc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(716, 636);
-            this.Controls.Add(this.rbCreateCustomer);
-            this.Controls.Add(this.rbCreateEmployee);
-            this.Controls.Add(this.rbCreateManager);
-            this.Controls.Add(this.btnCreateAcc);
+            this.ClientSize = new System.Drawing.Size(818, 848);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.rbCustomer);
+            this.Controls.Add(this.rbEmployee);
+            this.Controls.Add(this.rbManager);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.tbCreateStudNum);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtStudentNum);
             this.Controls.Add(this.lblCreateStudNum);
-            this.Controls.Add(this.tbCreateCell);
+            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblCreateCell);
-            this.Controls.Add(this.tbCreateEmail);
-            this.Controls.Add(this.tbCreateSurname);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.lblCreateEmail);
             this.Controls.Add(this.lblCreateSurname);
             this.Controls.Add(this.lblHeadingCreateNew);
             this.Controls.Add(this.lblCreateName);
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Create_NewAcc";
             this.Text = "Create_NewAcc";
             this.ResumeLayout(false);
@@ -230,19 +291,23 @@ namespace Mealz_Demo
 
         private System.Windows.Forms.Label lblCreateName;
         private System.Windows.Forms.Label lblHeadingCreateNew;
-        private System.Windows.Forms.TextBox tbCreateStudNum;
+        private System.Windows.Forms.TextBox txtStudentNum;
         private System.Windows.Forms.Label lblCreateStudNum;
-        private System.Windows.Forms.TextBox tbCreateCell;
+        private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Label lblCreateCell;
-        private System.Windows.Forms.TextBox tbCreateEmail;
-        private System.Windows.Forms.TextBox tbCreateSurname;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lblCreateEmail;
         private System.Windows.Forms.Label lblCreateSurname;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCreateAcc;
-        private System.Windows.Forms.RadioButton rbCreateManager;
-        private System.Windows.Forms.RadioButton rbCreateEmployee;
-        private System.Windows.Forms.RadioButton rbCreateCustomer;
+        private System.Windows.Forms.RadioButton rbManager;
+        private System.Windows.Forms.RadioButton rbEmployee;
+        private System.Windows.Forms.RadioButton rbCustomer;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label label3;
     }
 }

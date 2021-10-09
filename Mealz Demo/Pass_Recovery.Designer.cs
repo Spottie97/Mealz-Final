@@ -30,146 +30,126 @@ namespace Mealz_Demo
         private void InitializeComponent()
         {
             this.lblHeadingPassRec = new System.Windows.Forms.Label();
-            this.lblPassName = new System.Windows.Forms.Label();
-            this.tbPassName = new System.Windows.Forms.TextBox();
-            this.lblPassSurname = new System.Windows.Forms.Label();
             this.lblPassEmail = new System.Windows.Forms.Label();
-            this.tbPassSurname = new System.Windows.Forms.TextBox();
-            this.tbPassEmail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblPassCell = new System.Windows.Forms.Label();
-            this.tbPassCell = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
             this.btnValidate = new System.Windows.Forms.Button();
-            this.lblPassStudNum = new System.Windows.Forms.Label();
-            this.tbPassStudNum = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.txtStudentNum = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHeadingPassRec
             // 
             this.lblHeadingPassRec.AutoSize = true;
-            this.lblHeadingPassRec.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHeadingPassRec.Location = new System.Drawing.Point(46, 9);
+            this.lblHeadingPassRec.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHeadingPassRec.Location = new System.Drawing.Point(113, 9);
             this.lblHeadingPassRec.Name = "lblHeadingPassRec";
-            this.lblHeadingPassRec.Size = new System.Drawing.Size(181, 28);
+            this.lblHeadingPassRec.Size = new System.Drawing.Size(274, 38);
             this.lblHeadingPassRec.TabIndex = 0;
             this.lblHeadingPassRec.Text = "Password Recovery:";
-            // 
-            // lblPassName
-            // 
-            this.lblPassName.AutoSize = true;
-            this.lblPassName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassName.Location = new System.Drawing.Point(46, 74);
-            this.lblPassName.Name = "lblPassName";
-            this.lblPassName.Size = new System.Drawing.Size(79, 20);
-            this.lblPassName.TabIndex = 1;
-            this.lblPassName.Text = "Full Name:";
-            // 
-            // tbPassName
-            // 
-            this.tbPassName.Location = new System.Drawing.Point(46, 97);
-            this.tbPassName.Name = "tbPassName";
-            this.tbPassName.Size = new System.Drawing.Size(240, 23);
-            this.tbPassName.TabIndex = 2;
-            // 
-            // lblPassSurname
-            // 
-            this.lblPassSurname.AutoSize = true;
-            this.lblPassSurname.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassSurname.Location = new System.Drawing.Point(46, 141);
-            this.lblPassSurname.Name = "lblPassSurname";
-            this.lblPassSurname.Size = new System.Drawing.Size(70, 20);
-            this.lblPassSurname.TabIndex = 3;
-            this.lblPassSurname.Text = "Surname:";
             // 
             // lblPassEmail
             // 
             this.lblPassEmail.AutoSize = true;
             this.lblPassEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassEmail.Location = new System.Drawing.Point(46, 209);
+            this.lblPassEmail.Location = new System.Drawing.Point(175, 143);
             this.lblPassEmail.Name = "lblPassEmail";
-            this.lblPassEmail.Size = new System.Drawing.Size(106, 20);
+            this.lblPassEmail.Size = new System.Drawing.Size(134, 25);
             this.lblPassEmail.TabIndex = 4;
             this.lblPassEmail.Text = "Email Address:";
             // 
-            // tbPassSurname
+            // txtEmail
             // 
-            this.tbPassSurname.Location = new System.Drawing.Point(46, 164);
-            this.tbPassSurname.Name = "tbPassSurname";
-            this.tbPassSurname.Size = new System.Drawing.Size(240, 23);
-            this.tbPassSurname.TabIndex = 5;
-            // 
-            // tbPassEmail
-            // 
-            this.tbPassEmail.Location = new System.Drawing.Point(46, 232);
-            this.tbPassEmail.Name = "tbPassEmail";
-            this.tbPassEmail.Size = new System.Drawing.Size(240, 23);
-            this.tbPassEmail.TabIndex = 6;
+            this.txtEmail.Location = new System.Drawing.Point(141, 172);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(197, 27);
+            this.txtEmail.TabIndex = 6;
             // 
             // lblPassCell
             // 
             this.lblPassCell.AutoSize = true;
             this.lblPassCell.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassCell.Location = new System.Drawing.Point(46, 277);
+            this.lblPassCell.Location = new System.Drawing.Point(175, 223);
             this.lblPassCell.Name = "lblPassCell";
-            this.lblPassCell.Size = new System.Drawing.Size(95, 20);
+            this.lblPassCell.Size = new System.Drawing.Size(122, 25);
             this.lblPassCell.TabIndex = 7;
             this.lblPassCell.Text = "Cell Number:";
             // 
-            // tbPassCell
+            // txtNumber
             // 
-            this.tbPassCell.Location = new System.Drawing.Point(46, 300);
-            this.tbPassCell.Name = "tbPassCell";
-            this.tbPassCell.Size = new System.Drawing.Size(240, 23);
-            this.tbPassCell.TabIndex = 8;
+            this.txtNumber.Location = new System.Drawing.Point(141, 252);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumber.MaxLength = 10;
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(197, 27);
+            this.txtNumber.TabIndex = 8;
             // 
             // btnValidate
             // 
-            this.btnValidate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnValidate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnValidate.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnValidate.Location = new System.Drawing.Point(389, 446);
+            this.btnValidate.Location = new System.Drawing.Point(141, 322);
+            this.btnValidate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnValidate.Name = "btnValidate";
-            this.btnValidate.Size = new System.Drawing.Size(177, 51);
+            this.btnValidate.Size = new System.Drawing.Size(202, 47);
             this.btnValidate.TabIndex = 9;
             this.btnValidate.Text = "Validate Information";
             this.btnValidate.UseVisualStyleBackColor = true;
+            this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
             // 
-            // lblPassStudNum
+            // btnBack
             // 
-            this.lblPassStudNum.AutoSize = true;
-            this.lblPassStudNum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPassStudNum.Location = new System.Drawing.Point(46, 343);
-            this.lblPassStudNum.Name = "lblPassStudNum";
-            this.lblPassStudNum.Size = new System.Drawing.Size(121, 20);
-            this.lblPassStudNum.TabIndex = 10;
-            this.lblPassStudNum.Text = "Student Number:";
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(430, 362);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(94, 29);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // tbPassStudNum
+            // txtStudentNum
             // 
-            this.tbPassStudNum.Location = new System.Drawing.Point(46, 366);
-            this.tbPassStudNum.Name = "tbPassStudNum";
-            this.tbPassStudNum.Size = new System.Drawing.Size(240, 23);
-            this.tbPassStudNum.TabIndex = 11;
+            this.txtStudentNum.Location = new System.Drawing.Point(141, 102);
+            this.txtStudentNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStudentNum.MaxLength = 8;
+            this.txtStudentNum.Name = "txtStudentNum";
+            this.txtStudentNum.Size = new System.Drawing.Size(197, 27);
+            this.txtStudentNum.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(175, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Student Number";
             // 
             // Pass_Recovery
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(627, 539);
-            this.Controls.Add(this.tbPassStudNum);
-            this.Controls.Add(this.lblPassStudNum);
+            this.ClientSize = new System.Drawing.Size(536, 403);
+            this.Controls.Add(this.txtStudentNum);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnValidate);
-            this.Controls.Add(this.tbPassCell);
+            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblPassCell);
-            this.Controls.Add(this.tbPassEmail);
-            this.Controls.Add(this.tbPassSurname);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassEmail);
-            this.Controls.Add(this.lblPassSurname);
-            this.Controls.Add(this.tbPassName);
-            this.Controls.Add(this.lblPassName);
             this.Controls.Add(this.lblHeadingPassRec);
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Pass_Recovery";
             this.Text = "Password Recovery";
+            this.Load += new System.EventHandler(this.Pass_Recovery_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,16 +158,13 @@ namespace Mealz_Demo
         #endregion
 
         private System.Windows.Forms.Label lblHeadingPassRec;
-        private System.Windows.Forms.Label lblPassName;
-        private System.Windows.Forms.TextBox tbPassName;
-        private System.Windows.Forms.Label lblPassSurname;
         private System.Windows.Forms.Label lblPassEmail;
-        private System.Windows.Forms.TextBox tbPassSurname;
-        private System.Windows.Forms.TextBox tbPassEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblPassCell;
-        private System.Windows.Forms.TextBox tbPassCell;
+        private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Button btnValidate;
-        private System.Windows.Forms.Label lblPassStudNum;
-        private System.Windows.Forms.TextBox tbPassStudNum;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtStudentNum;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -32,7 +32,7 @@ namespace Mealz_Demo
                 }
                 else
                 {
-                     conn.Open();
+                    conn.Open();
 
                     comm = new SqlCommand($"INSERT INTO tblStock(stock_id, stock_name, stock_price, stock_quantity, menu) VALUES('{txtId.Text}','{txtName.Text}',{txtPrice.Text},{txtQuan.Text},{0})", conn);
                     adap = new SqlDataAdapter();

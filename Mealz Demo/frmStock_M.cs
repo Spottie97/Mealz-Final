@@ -181,6 +181,7 @@ namespace Mealz_Demo
 
                 comm.ExecuteNonQuery();
                 conn.Close();
+                LoadAll();
             }
             catch (SqlException error)
             {
