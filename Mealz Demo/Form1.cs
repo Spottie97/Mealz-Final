@@ -12,6 +12,7 @@ namespace Mealz_Demo
     public partial class Form1 : Form
     {
         string studentnum;
+        string stnum;
 
         public Form1()
         {
@@ -96,6 +97,26 @@ namespace Mealz_Demo
             frmRecover.Display(studentnum.ToString());
             frmRecover.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtStudentNum.Text = stnum;
+        }
+
+        public void Display(string stnum)
+        {
+            this.stnum = stnum.ToString();
+        }
+
+        private void txtStudentNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 4)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

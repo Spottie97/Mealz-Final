@@ -49,13 +49,14 @@ namespace Mealz_Demo
             this.label2 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCreateName
             // 
             this.lblCreateName.AutoSize = true;
             this.lblCreateName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateName.Location = new System.Drawing.Point(50, 127);
+            this.lblCreateName.Location = new System.Drawing.Point(38, 199);
             this.lblCreateName.Name = "lblCreateName";
             this.lblCreateName.Size = new System.Drawing.Size(101, 25);
             this.lblCreateName.TabIndex = 2;
@@ -64,27 +65,29 @@ namespace Mealz_Demo
             // lblHeadingCreateNew
             // 
             this.lblHeadingCreateNew.AutoSize = true;
-            this.lblHeadingCreateNew.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHeadingCreateNew.Location = new System.Drawing.Point(50, 43);
+            this.lblHeadingCreateNew.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHeadingCreateNew.Location = new System.Drawing.Point(56, 28);
             this.lblHeadingCreateNew.Name = "lblHeadingCreateNew";
-            this.lblHeadingCreateNew.Size = new System.Drawing.Size(246, 35);
+            this.lblHeadingCreateNew.Size = new System.Drawing.Size(488, 62);
             this.lblHeadingCreateNew.TabIndex = 3;
             this.lblHeadingCreateNew.Text = "Create New Account:";
             // 
             // txtStudentNum
             // 
-            this.txtStudentNum.Location = new System.Drawing.Point(50, 513);
+            this.txtStudentNum.Location = new System.Drawing.Point(38, 166);
             this.txtStudentNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtStudentNum.MaxLength = 8;
             this.txtStudentNum.Name = "txtStudentNum";
-            this.txtStudentNum.Size = new System.Drawing.Size(274, 27);
+            this.txtStudentNum.Size = new System.Drawing.Size(223, 27);
             this.txtStudentNum.TabIndex = 19;
+            this.txtStudentNum.TextChanged += new System.EventHandler(this.txtStudentNum_TextChanged);
+            this.txtStudentNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentNum_KeyPress);
             // 
             // lblCreateStudNum
             // 
             this.lblCreateStudNum.AutoSize = true;
             this.lblCreateStudNum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateStudNum.Location = new System.Drawing.Point(50, 483);
+            this.lblCreateStudNum.Location = new System.Drawing.Point(38, 136);
             this.lblCreateStudNum.Name = "lblCreateStudNum";
             this.lblCreateStudNum.Size = new System.Drawing.Size(154, 25);
             this.lblCreateStudNum.TabIndex = 18;
@@ -92,18 +95,20 @@ namespace Mealz_Demo
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(50, 425);
+            this.txtNumber.Location = new System.Drawing.Point(346, 229);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumber.MaxLength = 10;
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(274, 27);
+            this.txtNumber.Size = new System.Drawing.Size(219, 27);
             this.txtNumber.TabIndex = 17;
+            this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
+            this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
             // lblCreateCell
             // 
             this.lblCreateCell.AutoSize = true;
             this.lblCreateCell.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateCell.Location = new System.Drawing.Point(50, 395);
+            this.lblCreateCell.Location = new System.Drawing.Point(346, 200);
             this.lblCreateCell.Name = "lblCreateCell";
             this.lblCreateCell.Size = new System.Drawing.Size(122, 25);
             this.lblCreateCell.TabIndex = 16;
@@ -111,25 +116,26 @@ namespace Mealz_Demo
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(50, 335);
+            this.txtEmail.Location = new System.Drawing.Point(346, 169);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(274, 27);
+            this.txtEmail.Size = new System.Drawing.Size(219, 27);
             this.txtEmail.TabIndex = 15;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(50, 244);
+            this.txtSurname.Location = new System.Drawing.Point(38, 297);
             this.txtSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(274, 27);
+            this.txtSurname.Size = new System.Drawing.Size(223, 27);
             this.txtSurname.TabIndex = 14;
             // 
             // lblCreateEmail
             // 
             this.lblCreateEmail.AutoSize = true;
             this.lblCreateEmail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateEmail.Location = new System.Drawing.Point(50, 304);
+            this.lblCreateEmail.Location = new System.Drawing.Point(346, 138);
             this.lblCreateEmail.Name = "lblCreateEmail";
             this.lblCreateEmail.Size = new System.Drawing.Size(134, 25);
             this.lblCreateEmail.TabIndex = 13;
@@ -139,7 +145,7 @@ namespace Mealz_Demo
             // 
             this.lblCreateSurname.AutoSize = true;
             this.lblCreateSurname.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCreateSurname.Location = new System.Drawing.Point(50, 213);
+            this.lblCreateSurname.Location = new System.Drawing.Point(38, 268);
             this.lblCreateSurname.Name = "lblCreateSurname";
             this.lblCreateSurname.Size = new System.Drawing.Size(91, 25);
             this.lblCreateSurname.TabIndex = 12;
@@ -147,17 +153,17 @@ namespace Mealz_Demo
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(50, 157);
+            this.txtName.Location = new System.Drawing.Point(38, 229);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(274, 27);
+            this.txtName.Size = new System.Drawing.Size(223, 27);
             this.txtName.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(50, 573);
+            this.label1.Location = new System.Drawing.Point(142, 444);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(298, 25);
             this.label1.TabIndex = 23;
@@ -166,7 +172,7 @@ namespace Mealz_Demo
             // rbManager
             // 
             this.rbManager.AutoSize = true;
-            this.rbManager.Location = new System.Drawing.Point(50, 632);
+            this.rbManager.Location = new System.Drawing.Point(68, 494);
             this.rbManager.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbManager.Name = "rbManager";
             this.rbManager.Size = new System.Drawing.Size(89, 24);
@@ -178,7 +184,7 @@ namespace Mealz_Demo
             // rbEmployee
             // 
             this.rbEmployee.AutoSize = true;
-            this.rbEmployee.Location = new System.Drawing.Point(199, 632);
+            this.rbEmployee.Location = new System.Drawing.Point(217, 494);
             this.rbEmployee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbEmployee.Name = "rbEmployee";
             this.rbEmployee.Size = new System.Drawing.Size(96, 24);
@@ -190,7 +196,7 @@ namespace Mealz_Demo
             // rbCustomer
             // 
             this.rbCustomer.AutoSize = true;
-            this.rbCustomer.Location = new System.Drawing.Point(353, 632);
+            this.rbCustomer.Location = new System.Drawing.Point(371, 494);
             this.rbCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbCustomer.Name = "rbCustomer";
             this.rbCustomer.Size = new System.Drawing.Size(150, 24);
@@ -203,7 +209,7 @@ namespace Mealz_Demo
             // 
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(540, 718);
+            this.btnCreate.Location = new System.Drawing.Point(195, 554);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(197, 69);
             this.btnCreate.TabIndex = 29;
@@ -214,7 +220,7 @@ namespace Mealz_Demo
             // txtCode
             // 
             this.txtCode.ForeColor = System.Drawing.Color.Silver;
-            this.txtCode.Location = new System.Drawing.Point(490, 436);
+            this.txtCode.Location = new System.Drawing.Point(195, 387);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(187, 27);
             this.txtCode.TabIndex = 30;
@@ -227,7 +233,7 @@ namespace Mealz_Demo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(505, 408);
+            this.label2.Location = new System.Drawing.Point(210, 359);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 25);
             this.label2.TabIndex = 31;
@@ -235,7 +241,7 @@ namespace Mealz_Demo
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(475, 533);
+            this.txtPass.Location = new System.Drawing.Point(346, 301);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(219, 27);
             this.txtPass.TabIndex = 32;
@@ -245,19 +251,32 @@ namespace Mealz_Demo
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(530, 494);
+            this.label3.Location = new System.Drawing.Point(346, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 25);
             this.label3.TabIndex = 33;
             this.label3.Text = "Password";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(497, 654);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(90, 35);
+            this.btnBack.TabIndex = 34;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Create_NewAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(818, 848);
+            this.ClientSize = new System.Drawing.Size(599, 701);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label2);
@@ -309,5 +328,6 @@ namespace Mealz_Demo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBack;
     }
 }

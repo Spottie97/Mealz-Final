@@ -50,7 +50,7 @@ namespace Mealz_Demo
 
                 conn.Open();
 
-                comm = new SqlCommand("SELECT user_id,user_email, user_cell, user_manager, user_employee, user_customer  FROM tblUser WHERE user_id = '" + txtStudentNum.Text + "'", conn);
+                comm = new SqlCommand("SELECT user_id,user_email, user_cell, user_manager, user_employee, user_customer, user_pass  FROM tblUser WHERE user_id = '" + txtStudentNum.Text + "'", conn);
                 adap = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -61,23 +61,35 @@ namespace Mealz_Demo
 
                 while (red.Read() && test)
                 {
+                    /**MessageBox.Show(red.GetValue(0).ToString() + "  " + txtStudentNum.Text);
+                    MessageBox.Show(red.GetValue(1).ToString() + "  " + txtEmail.Text);
+                    MessageBox.Show(red.GetValue(2).ToString() + "  " + txtNumber.Text);
+                    MessageBox.Show(red.GetValue(5).ToString() + "  " + "True");**/
+
+
                     if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(3).ToString() == "True")
                     {
-                        frmMain_M myMain = new frmMain_M(); //manager
-                        myMain.ShowDialog();
+                        MessageBox.Show(red.GetValue(6).ToString());        //manager
                         test = false;
+                        Form1 myOne = new Form1();                        
+                        myOne.Show();
+                        this.Close();
                     }
                     else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(4).ToString() == "True")
                     {
-                        frmMain_M myMain = new frmMain_M();    //employee
-                        myMain.ShowDialog();
-                        test = false;
+                        MessageBox.Show(red.GetValue(6).ToString());        //employee
+                        test = false; 
+                        Form1 myOne = new Form1();
+                        myOne.Show();
+                        this.Close();
                     }
                     else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(5).ToString() == "True")
                     {
-                        frmMain_M myMain = new frmMain_M();        //customer
-                        myMain.ShowDialog();
-                        test = false;
+                        MessageBox.Show(red.GetValue(6).ToString());        //customer
+                        test = false; 
+                        Form1 myOne = new Form1();        
+                        myOne.Show();   
+                        this.Close();                       
                     }
                 }
                 if (test)
@@ -90,6 +102,36 @@ namespace Mealz_Demo
                 MessageBox.Show(error.Message);
             }
             conn.Close();
+        }
+
+        private void txtStudentNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStudentNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 4)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 4)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

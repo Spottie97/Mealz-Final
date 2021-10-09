@@ -188,5 +188,25 @@ namespace Mealz_Demo
                 MessageBox.Show(error.Message);
             }
         }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 4)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 4)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
