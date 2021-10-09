@@ -84,7 +84,8 @@ namespace Mealz_Demo
         private void lblLoginCreateAcc_Click(object sender, EventArgs e)
         {
             Create_NewAcc myCreate = new Create_NewAcc();
-            myCreate.ShowDialog();
+            myCreate.Show();
+            this.Hide();
         }
 
         private void lblLoginForgetPass_Click(object sender, EventArgs e)
@@ -93,7 +94,8 @@ namespace Mealz_Demo
 
             Pass_Recovery frmRecover = new Pass_Recovery();
             frmRecover.Display(studentnum.ToString());
-            frmRecover.ShowDialog();
+            frmRecover.Show();
+            this.Hide();
         }
     }
 }

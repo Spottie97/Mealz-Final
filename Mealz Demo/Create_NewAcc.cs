@@ -89,11 +89,13 @@ namespace Mealz_Demo
              if(rbManager.Checked)
              {
                 frmMain_M myCreate = new frmMain_M();
-                myCreate.ShowDialog();
+                myCreate.Show();
+                this.Close();
              }else if (rbEmployee.Checked)
              {
                 frmMain_M myCreate = new frmMain_M();;                
-                myCreate.ShowDialog();
+                myCreate.Show();
+                this.Close();
              }
         }
 

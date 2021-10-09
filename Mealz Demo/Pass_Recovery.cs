@@ -26,7 +26,7 @@ namespace Mealz_Demo
         private void btnBack_Click(object sender, EventArgs e)
         {
             Form1 frmOne = new Form1();
-            frmOne.ShowDialog();
+            frmOne.Show();
             this.Close();
         }
 
