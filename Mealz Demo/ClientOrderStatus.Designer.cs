@@ -29,103 +29,77 @@ namespace Mealz_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbOrderPrep = new System.Windows.Forms.ListBox();
-            this.lbOrderReady = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lblOrderPrepHeading = new System.Windows.Forms.Label();
-            this.lblOrderReadyHeading = new System.Windows.Forms.Label();
-            this.lblClientStatHeading = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbOrderPrep
-            // 
-            this.lbOrderPrep.FormattingEnabled = true;
-            this.lbOrderPrep.ItemHeight = 15;
-            this.lbOrderPrep.Location = new System.Drawing.Point(56, 138);
-            this.lbOrderPrep.Name = "lbOrderPrep";
-            this.lbOrderPrep.Size = new System.Drawing.Size(262, 274);
-            this.lbOrderPrep.TabIndex = 0;
-            // 
-            // lbOrderReady
-            // 
-            this.lbOrderReady.FormattingEnabled = true;
-            this.lbOrderReady.ItemHeight = 15;
-            this.lbOrderReady.Location = new System.Drawing.Point(429, 138);
-            this.lbOrderReady.Name = "lbOrderReady";
-            this.lbOrderReady.Size = new System.Drawing.Size(262, 274);
-            this.lbOrderReady.TabIndex = 1;
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBack.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnBack.Location = new System.Drawing.Point(551, 572);
+            this.btnBack.Location = new System.Drawing.Point(452, 519);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(140, 41);
+            this.btnBack.Size = new System.Drawing.Size(88, 36);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // lblOrderPrepHeading
+            // pictureBox1
             // 
-            this.lblOrderPrepHeading.AutoSize = true;
-            this.lblOrderPrepHeading.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderPrepHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblOrderPrepHeading.Location = new System.Drawing.Point(56, 102);
-            this.lblOrderPrepHeading.Name = "lblOrderPrepHeading";
-            this.lblOrderPrepHeading.Size = new System.Drawing.Size(185, 25);
-            this.lblOrderPrepHeading.TabIndex = 3;
-            this.lblOrderPrepHeading.Text = "Order being prepared";
+            this.pictureBox1.Image = global::Mealz_Demo.Properties.Resources.Mealz_logos_transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(65, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(411, 386);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblOrderReadyHeading
+            // label1
             // 
-            this.lblOrderReadyHeading.AutoSize = true;
-            this.lblOrderReadyHeading.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderReadyHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblOrderReadyHeading.Location = new System.Drawing.Point(429, 102);
-            this.lblOrderReadyHeading.Name = "lblOrderReadyHeading";
-            this.lblOrderReadyHeading.Size = new System.Drawing.Size(222, 25);
-            this.lblOrderReadyHeading.TabIndex = 4;
-            this.lblOrderReadyHeading.Text = "Order Ready for Collection";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(107, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(338, 46);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Ready for collection";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblClientStatHeading
+            // timer1
             // 
-            this.lblClientStatHeading.AutoSize = true;
-            this.lblClientStatHeading.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lblClientStatHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblClientStatHeading.Location = new System.Drawing.Point(300, 25);
-            this.lblClientStatHeading.Name = "lblClientStatHeading";
-            this.lblClientStatHeading.Size = new System.Drawing.Size(146, 32);
-            this.lblClientStatHeading.TabIndex = 5;
-            this.lblClientStatHeading.Text = "Order Status";
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ClientOrderStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(746, 645);
-            this.Controls.Add(this.lblClientStatHeading);
-            this.Controls.Add(this.lblOrderReadyHeading);
-            this.Controls.Add(this.lblOrderPrepHeading);
+            this.BackColor = System.Drawing.Color.DarkRed;
+            this.ClientSize = new System.Drawing.Size(552, 568);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lbOrderReady);
-            this.Controls.Add(this.lbOrderPrep);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClientOrderStatus";
             this.Text = "Order Status";
             this.Load += new System.EventHandler(this.ClientOrderStatus_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbOrderPrep;
-        private System.Windows.Forms.ListBox lbOrderReady;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lblOrderPrepHeading;
-        private System.Windows.Forms.Label lblOrderReadyHeading;
-        private System.Windows.Forms.Label lblClientStatHeading;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
