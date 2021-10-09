@@ -29,31 +29,12 @@ namespace Mealz_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbOrderPrep = new System.Windows.Forms.ListBox();
-            this.lbOrderReady = new System.Windows.Forms.ListBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lblOrderPrepHeading = new System.Windows.Forms.Label();
-            this.lblOrderReadyHeading = new System.Windows.Forms.Label();
             this.lblClientStatHeading = new System.Windows.Forms.Label();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbOrderPrep
-            // 
-            this.lbOrderPrep.FormattingEnabled = true;
-            this.lbOrderPrep.ItemHeight = 15;
-            this.lbOrderPrep.Location = new System.Drawing.Point(56, 138);
-            this.lbOrderPrep.Name = "lbOrderPrep";
-            this.lbOrderPrep.Size = new System.Drawing.Size(262, 274);
-            this.lbOrderPrep.TabIndex = 0;
-            // 
-            // lbOrderReady
-            // 
-            this.lbOrderReady.FormattingEnabled = true;
-            this.lbOrderReady.ItemHeight = 15;
-            this.lbOrderReady.Location = new System.Drawing.Point(429, 138);
-            this.lbOrderReady.Name = "lbOrderReady";
-            this.lbOrderReady.Size = new System.Drawing.Size(262, 274);
-            this.lbOrderReady.TabIndex = 1;
             // 
             // btnBack
             // 
@@ -66,28 +47,6 @@ namespace Mealz_Demo
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
-            // lblOrderPrepHeading
-            // 
-            this.lblOrderPrepHeading.AutoSize = true;
-            this.lblOrderPrepHeading.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderPrepHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblOrderPrepHeading.Location = new System.Drawing.Point(56, 102);
-            this.lblOrderPrepHeading.Name = "lblOrderPrepHeading";
-            this.lblOrderPrepHeading.Size = new System.Drawing.Size(185, 25);
-            this.lblOrderPrepHeading.TabIndex = 3;
-            this.lblOrderPrepHeading.Text = "Order being prepared";
-            // 
-            // lblOrderReadyHeading
-            // 
-            this.lblOrderReadyHeading.AutoSize = true;
-            this.lblOrderReadyHeading.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderReadyHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblOrderReadyHeading.Location = new System.Drawing.Point(429, 102);
-            this.lblOrderReadyHeading.Name = "lblOrderReadyHeading";
-            this.lblOrderReadyHeading.Size = new System.Drawing.Size(222, 25);
-            this.lblOrderReadyHeading.TabIndex = 4;
-            this.lblOrderReadyHeading.Text = "Order Ready for Collection";
-            // 
             // lblClientStatHeading
             // 
             this.lblClientStatHeading.AutoSize = true;
@@ -99,33 +58,48 @@ namespace Mealz_Demo
             this.lblClientStatHeading.TabIndex = 5;
             this.lblClientStatHeading.Text = "Order Status";
             // 
+            // lblOrderStatus
+            // 
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderStatus.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblOrderStatus.Location = new System.Drawing.Point(218, 453);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(321, 25);
+            this.lblOrderStatus.TabIndex = 3;
+            this.lblOrderStatus.Text = "Your Order is being made...hang tight...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(113, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(510, 303);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // ClientOrderStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(746, 645);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblClientStatHeading);
-            this.Controls.Add(this.lblOrderReadyHeading);
-            this.Controls.Add(this.lblOrderPrepHeading);
+            this.Controls.Add(this.lblOrderStatus);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lbOrderReady);
-            this.Controls.Add(this.lbOrderPrep);
             this.Name = "ClientOrderStatus";
             this.Text = "Order Status";
             this.Load += new System.EventHandler(this.ClientOrderStatus_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbOrderPrep;
-        private System.Windows.Forms.ListBox lbOrderReady;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lblOrderPrepHeading;
-        private System.Windows.Forms.Label lblOrderReadyHeading;
         private System.Windows.Forms.Label lblClientStatHeading;
+        private System.Windows.Forms.Label lblOrderStatus;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

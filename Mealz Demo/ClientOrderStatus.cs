@@ -18,12 +18,7 @@ namespace Mealz_Demo
 
         private void ClientOrderStatus_Load(object sender, EventArgs e)
         {
-            string sqlConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Reinhardt\Desktop\Mealz\Mealz Demo\Order Status.mdf;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);
-
-            sqlConnection.Open();
-
-
+            
         }
     }
 }

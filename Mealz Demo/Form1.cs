@@ -26,7 +26,7 @@ namespace Mealz_Demo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*Boolean test = true;
+            Boolean test = true;
 
             try
             {
@@ -74,10 +74,9 @@ namespace Mealz_Demo
                 MessageBox.Show(error.Message);
             }
             conn.Close();
-            */
-            ClientOrderStatus myCreate = new ClientOrderStatus();
+            /*ClientOrderStatus myCreate = new ClientOrderStatus();
             myCreate.Show();
-            this.Hide();
+            this.Hide();*/
 
         }
 
