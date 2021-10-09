@@ -157,6 +157,7 @@ namespace Mealz_Demo
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(125, 27);
             this.txtPrice.TabIndex = 30;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // txtQuantity
             // 
@@ -164,6 +165,7 @@ namespace Mealz_Demo
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(125, 27);
             this.txtQuantity.TabIndex = 31;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // label1
             // 

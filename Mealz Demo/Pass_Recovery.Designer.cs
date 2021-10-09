@@ -86,6 +86,8 @@ namespace Mealz_Demo
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(197, 27);
             this.txtNumber.TabIndex = 8;
+            this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
+            this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
             // btnValidate
             // 
@@ -119,6 +121,8 @@ namespace Mealz_Demo
             this.txtStudentNum.Name = "txtStudentNum";
             this.txtStudentNum.Size = new System.Drawing.Size(197, 27);
             this.txtStudentNum.TabIndex = 12;
+            this.txtStudentNum.TextChanged += new System.EventHandler(this.txtStudentNum_TextChanged);
+            this.txtStudentNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentNum_KeyPress);
             // 
             // label1
             // 
