@@ -14,5 +14,10 @@ namespace Mealz_Demo
         {
             InitializeComponent();
         }
+
+        private void frmPayment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

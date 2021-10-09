@@ -26,7 +26,7 @@ namespace Mealz_Demo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Boolean test = true;
+            /*Boolean test = true;
 
             try
             {
@@ -74,6 +74,11 @@ namespace Mealz_Demo
                 MessageBox.Show(error.Message);
             }
             conn.Close();
+            */
+            ClientOrderStatus myCreate = new ClientOrderStatus();
+            myCreate.Show();
+            this.Hide();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -81,21 +86,22 @@ namespace Mealz_Demo
 
         }
 
-        private void lblLoginCreateAcc_Click(object sender, EventArgs e)
-        {
-            Create_NewAcc myCreate = new Create_NewAcc();
-            myCreate.Show();
-            this.Hide();
-        }
+            private void lblLoginCreateAcc_Click(object sender, EventArgs e)
+            {
+                Create_NewAcc myCreate = new Create_NewAcc();
+                myCreate.Show();
+                this.Hide();
+            }
 
-        private void lblLoginForgetPass_Click(object sender, EventArgs e)
-        {
-            studentnum = txtStudentNum.Text;
+            private void lblLoginForgetPass_Click(object sender, EventArgs e)
+            {
+                studentnum = txtStudentNum.Text;
 
-            Pass_Recovery frmRecover = new Pass_Recovery();
-            frmRecover.Display(studentnum.ToString());
-            frmRecover.Show();
-            this.Hide();
-        }
+                Pass_Recovery frmRecover = new Pass_Recovery();
+                frmRecover.Display(studentnum.ToString());
+                frmRecover.Show();
+                this.Hide();
+            }
+
     }
 }

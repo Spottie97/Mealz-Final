@@ -1,4 +1,4 @@
-private void btnUpdate_Click(object sender, EventArgs e)
+/*private void btnUpdate_Click(object sender, EventArgs e)
 {
     double balance = getBalance("student_id");
     updateBalance(balance);
@@ -49,4 +49,4 @@ private void updateBalance(double balance)
     sqlConnection.Close();
 
     MessageBox.Show("Approved");
-}
+}*/

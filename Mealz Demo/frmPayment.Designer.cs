@@ -29,10 +29,18 @@ namespace Mealz_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmPayment
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmPayment";
             this.Text = "frmPayment";
+            this.Load += new System.EventHandler(this.frmPayment_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
