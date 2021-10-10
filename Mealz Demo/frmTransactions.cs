@@ -30,6 +30,7 @@ namespace Mealz_Demo
 
 
 
+
             /*
              * Do correct me if I'm wrong, but...
              * 
@@ -50,6 +51,9 @@ namespace Mealz_Demo
              * Lastly, how or why is the student confirming the order if you're already charged them for it by updating the amount due in ClientOrderMenu?
              * That renders the check box pretty useless since the student's already been charged for the order.
              */
+
+            //Insert into tblOrder user_id and Order_date
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

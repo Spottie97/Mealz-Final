@@ -13,7 +13,7 @@ namespace Mealz_Demo
     {
         SqlConnection sqlconnection;
         SqlCommand sqlcommand;
-        string ConnectionString = @"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True";
+        string ConnectionString = @"Data Source=.;Initial Catalog=Mealz_db2.0;Integrated Security=True";
         string Query;
         DataSet dataset;
         DataTable datatable;
@@ -43,8 +43,7 @@ namespace Mealz_Demo
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            ClientMain_M Main = new ClientMain_M();
-            Main.Show();
+            
             this.Close();
         }
     }
