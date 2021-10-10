@@ -67,6 +67,7 @@ namespace Mealz_Demo
             this.btnTotal.TabIndex = 2;
             this.btnTotal.Text = "Total ";
             this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // lblTotal
             // 

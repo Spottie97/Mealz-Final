@@ -19,5 +19,10 @@ namespace Mealz_Demo
         {
 
         }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
