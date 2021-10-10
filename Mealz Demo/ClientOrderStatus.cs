@@ -48,7 +48,7 @@ namespace Mealz_Demo
 
             adapt = new SqlDataAdapter();
             ds = new DataSet();
-            comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id = @StudentNum", conn);
+            comm = new SqlCommand("SELECT order_done FROM tblorder_detail WHERE user_id=@StudentNum", conn);
 
             red = comm.ExecuteReader();
 

@@ -45,7 +45,9 @@ namespace Mealz_Demo
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1.Globals.StudID = "";
-            Application.Exit();
+            Form1 Login = new Form1();
+            Login.Show();
+            this.Close();
         }
     }
 }

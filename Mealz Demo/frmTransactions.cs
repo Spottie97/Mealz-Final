@@ -30,7 +30,16 @@ namespace Mealz_Demo
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            ClientOrderMenu Menu = new ClientOrderMenu();
+            Menu.Show();
+            this.Close();
+        }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            ClientOrderMenu Menu = new ClientOrderMenu();
+            Menu.Show();
+            this.Close();
         }
     }
 }

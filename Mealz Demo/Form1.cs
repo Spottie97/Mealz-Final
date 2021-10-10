@@ -54,23 +54,26 @@ namespace Mealz_Demo
                     if (red.GetValue(2).ToString() == "True")
                     {
                         Globals.StudID = txtStudentNum.Text;
-                        frmMain_M myMain = new frmMain_M();         //manager
-                        myMain.ShowDialog();
+                        frmMain_M myMain = new frmMain_M();  //manager
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                     else if (red.GetValue(3).ToString() == "True")
                     {
                         Globals.StudID = txtStudentNum.Text;
-                        frmMain_M myMain = new frmMain_M();     //employee
-                        myMain.ShowDialog();
+                        frmMain_M myMain = new frmMain_M();  //employee
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                     else
                     {
                         Globals.StudID = txtStudentNum.Text;
-                        ClientMain_M myMain = new ClientMain_M();        //customer
-                        myMain.ShowDialog();
+                        ClientMain_M myMain = new ClientMain_M();  //customer
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                 }
                 if (test)
@@ -110,6 +113,7 @@ namespace Mealz_Demo
         private void Form1_Load(object sender, EventArgs e)
         {
             txtStudentNum.Text = stnum;
+            txtPass.Text = "";
         }
 
         public void Display(string stnum)
