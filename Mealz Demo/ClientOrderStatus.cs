@@ -65,8 +65,7 @@ namespace Mealz_Demo
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            ClientMain_M BackToMain = new ClientMain_M();
-            BackToMain.Show();
+            
             this.Close();
         }
 
