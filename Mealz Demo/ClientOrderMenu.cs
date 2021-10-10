@@ -9,26 +9,23 @@ using System.Data.SqlClient;
 
 namespace Mealz_Demo
 {
-    public partial class frmMenu_M : Form
+    public partial class ClientOrderMenu : Form
     {
-        public frmMenu_M()
+        public static string Productname = "";
+        public static string ProductPrice = "";
+        public static string ProductQuantity = "";
+        public ClientOrderMenu()
         {
             InitializeComponent();
         }
-
         SqlConnection conn;
         SqlCommand comm;
         DataSet ds;
         SqlDataAdapter adapt;
         SqlDataReader red;
+        
 
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmMenu_M_Load(object sender, EventArgs e)
+        private void ClientOrderMenu_Load(object sender, EventArgs e)
         {
             Boolean test = true;
 
@@ -46,11 +43,11 @@ namespace Mealz_Demo
                 adapt.Fill(ds, "tblStock");
 
                 red = comm.ExecuteReader();
-                lstOutput.Items.Add("============================================");
-                
+                lbBreakfast.Items.Add("============================================");
+
                 while (red.Read() && test)
                 {
-                    lstOutput.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));             
+                    lbBreakfast.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
                 }
 
                 red.Close();
@@ -66,17 +63,17 @@ namespace Mealz_Demo
 
                 red = comm.ExecuteReader();
 
-                lstDisplay.Items.Add("The Meats on the menu");
-                lstDisplay.Items.Add("============================================");
+                lbLunch.Items.Add("The Meats on the menu");
+                lbLunch.Items.Add("============================================");
 
                 while (red.Read())
                 {
-                    lstDisplay.Items.Add(red.GetValue(0) + "\t" + "\t" +"R " + red.GetValue(1));
+                    lbLunch.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
                 }
 
-                lstDisplay.Items.Add("");
-                lstDisplay.Items.Add("Non Meats");
-                lstDisplay.Items.Add("=============================================");
+                lbLunch.Items.Add("");
+                lbLunch.Items.Add("Non Meats");
+                lbLunch.Items.Add("=============================================");
 
                 red.Close();
 
@@ -93,7 +90,7 @@ namespace Mealz_Demo
 
                 while (red.Read())
                 {
-                    lstDisplay.Items.Add(red.GetValue(0) + "\t" + "\t" +"R " + red.GetValue(1));
+                    lbLunch.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
                 }
 
                 /////////////////////////////////////////////////////////
@@ -108,9 +105,44 @@ namespace Mealz_Demo
             }
         }
 
-        private void lstOutput_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //This button should add the selected item in the menu list to the order/cart list and then update the SQl database to show the item was removed from stock quantity
+            //Aswell as update the clients Amount Due.
+            foreach(var item in lbBreakfast.SelectedItems)
+            {
+                lbOrderCart.Items.Add(item);
+
+            }
+            foreach (var item in lbLunch.SelectedItems)
+            {
+                lbOrderCart.Items.Add(item);
+            }
+
+        }
+
+        private void lbLunch_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            //This button should undo what the add button does
+            foreach(var item in lbOrderCart.SelectedItems)
+            {
+                lbOrderCart.Items.Remove(item);
+            }
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+          //This button should just navigate to frmTransaction
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

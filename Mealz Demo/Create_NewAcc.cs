@@ -29,7 +29,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
 
                 if (Regex.IsMatch(txtEmail.Text, pattern))
                 {
@@ -168,6 +168,11 @@ namespace Mealz_Demo
             {
                 e.Handled = true;
             }
+        }
+
+        private void Create_NewAcc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

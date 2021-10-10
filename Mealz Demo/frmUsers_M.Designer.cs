@@ -57,14 +57,13 @@ namespace Mealz_Demo
             // 
             // frmUsers_M
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(955, 592);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dbView);
             this.Name = "frmUsers_M";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsers_M";
             this.Load += new System.EventHandler(this.frmUsers_M_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbView)).EndInit();

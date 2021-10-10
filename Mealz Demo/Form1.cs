@@ -11,6 +11,11 @@ namespace Mealz_Demo
 {
     public partial class Form1 : Form
     {
+        public class Globals
+        {
+            public static string StudID = "";
+        }
+
         string studentnum;
         string stnum;
 
@@ -31,7 +36,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
 
                 conn.Open();
 
@@ -48,21 +53,27 @@ namespace Mealz_Demo
                 {
                     if (red.GetValue(2).ToString() == "True")
                     {
-                        frmMain_M myMain = new frmMain_M();         //manager
-                        myMain.ShowDialog();
+                        Globals.StudID = txtStudentNum.Text;
+                        frmMain_M myMain = new frmMain_M();  //manager
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                     else if (red.GetValue(3).ToString() == "True")
                     {
-                        frmMain_M myMain = new frmMain_M();     //employee
-                        myMain.ShowDialog();
+                        Globals.StudID = txtStudentNum.Text;
+                        frmMain_M myMain = new frmMain_M();  //employee
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                     else
                     {
-                        frmMain_M myMain = new frmMain_M();        //customer
-                        myMain.ShowDialog();
+                        Globals.StudID = txtStudentNum.Text;
+                        ClientMain_M myMain = new ClientMain_M();  //customer
+                        myMain.Show();
                         test = false;
+                        this.Hide();
                     }
                 }
                 if (test)
@@ -102,6 +113,7 @@ namespace Mealz_Demo
         private void Form1_Load(object sender, EventArgs e)
         {
             txtStudentNum.Text = stnum;
+            txtPass.Text = "";
         }
 
         public void Display(string stnum)
