@@ -34,7 +34,7 @@ namespace Mealz_Demo
 
                 conn.Open();
 
-                comm = new SqlCommand("SELECT stock_name, stock_price, menu FROM tblStock WHERE menu = 1 AND stock_Id LIKE 'BR%'", conn);
+                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price, menu FROM tblStock WHERE menu = 1 AND stock_Id LIKE 'BR%'", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -48,8 +48,8 @@ namespace Mealz_Demo
                 {
                     if (red.HasRows)
                     {
-                        lbBreakfast.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
-                        breakfastStockIDs.Add(red.GetValue(2).ToString());
+                        lbBreakfast.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        breakfastStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
 
@@ -57,7 +57,7 @@ namespace Mealz_Demo
 
                 ///////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -73,8 +73,8 @@ namespace Mealz_Demo
                 {
                     if (red.HasRows)
                     {
-                        lbLunch.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
-                        lunchDinnerStockIDs.Add(red.GetValue(2).ToString());
+                        lbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        lunchDinnerStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
 
@@ -86,7 +86,7 @@ namespace Mealz_Demo
 
                 //////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -99,8 +99,8 @@ namespace Mealz_Demo
                 {
                     if (red.HasRows)
                     {
-                        lbLunch.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));
-                        lunchDinnerStockIDs.Add(red.GetValue(2).ToString());
+                        lbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        lunchDinnerStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
 
@@ -145,16 +145,16 @@ namespace Mealz_Demo
 
 
 
-            foreach (string item in lbBreakfast.Items)
+            for (int i = 0; i < lbBreakfast.Items.Count; i++)
             {
 
                 if (removeFromQuantity(item))
                 {
-                    lbOrderCart.Items.Add(item.ToString());
+                    lbOrderCart.Items.Add(item);
                 }
             }
 
-            foreach (string item in lbLunch.Items)
+            for (int i = 0; i < lbLunch.Items.Count; i++)
             {
                 if (removeFromQuantity(item))
                 {
@@ -217,9 +217,9 @@ namespace Mealz_Demo
             {
                 conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
                 comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
-
-                comm.Parameters.AddWithValue("@quantity", quantity);
-                comm.Parameters.AddWithValue("@stock_id", item.ToString());
+                
+                comm.Parameters.AddWithValue("@quantity", quantity+1);
+                comm.Parameters.AddWithValue("@stock_id", item);
 
             comm.ExecuteNonQuery();
 
@@ -243,8 +243,8 @@ namespace Mealz_Demo
             conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
             comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
 
-            comm.Parameters.AddWithValue("@quantity", quantity + 1);
-            comm.Parameters.AddWithValue("@stock_id", item.ToString());
+            comm.Parameters.AddWithValue("@quantity", quantity);
+            comm.Parameters.AddWithValue("@stock_id", item);
 
             comm.ExecuteNonQuery();
 
@@ -260,16 +260,16 @@ namespace Mealz_Demo
         return true;
         }
 
-        private int getStockQuantity(string item)
+        private int getStockQuantity(string stockID)
         {
         int quantity = 0;
 
         try
         {
             conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
-            comm = new SqlCommand("SELECT * FROM SET tblStock WHERE stock_name = @stock_name", conn);
+            comm = new SqlCommand("SELECT * FROM SET tblStock WHERE stock_id = @stock_id", conn);
 
-            comm.Parameters.AddWithValue("@stock_name", item.ToString());
+            comm.Parameters.AddWithValue("@stock_id", stockID);
             SqlDataReader dataReader = comm.ExecuteReader();
 
             if (dataReader.HasRows)
