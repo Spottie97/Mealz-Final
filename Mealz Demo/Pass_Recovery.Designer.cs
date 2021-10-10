@@ -152,6 +152,7 @@ namespace Mealz_Demo
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Pass_Recovery";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password Recovery";
             this.Load += new System.EventHandler(this.Pass_Recovery_Load);
             this.ResumeLayout(false);
