@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Mealz_Demo
 {
-    public partial class frmUsers_M : Form
+    public partial class ClientOrderMenu : Form
     {
-        public frmUsers_M()
+        public ClientOrderMenu()
         {
             InitializeComponent();
         }
