@@ -125,6 +125,7 @@ namespace Mealz_Demo
             this.dbMenu.RowTemplate.Height = 25;
             this.dbMenu.Size = new System.Drawing.Size(523, 244);
             this.dbMenu.TabIndex = 12;
+            this.dbMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbMenu_CellContentClick);
             // 
             // ClientOrderMenu
             // 

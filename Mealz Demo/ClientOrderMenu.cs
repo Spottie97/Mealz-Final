@@ -72,5 +72,10 @@ namespace Mealz_Demo
         {
             this.Close();
         }
+
+        private void dbMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
