@@ -23,7 +23,8 @@ namespace Mealz_Demo
         DataSet ds;
         SqlDataAdapter adapt;
         SqlDataReader red;
-        
+
+        int amountDue = 0;
 
         private void ClientOrderMenu_Load(object sender, EventArgs e)
         {
@@ -109,16 +110,24 @@ namespace Mealz_Demo
         {
             //This button should add the selected item in the menu list to the order/cart list and then update the SQl database to show the item was removed from stock quantity
             //Aswell as update the clients Amount Due.
-            foreach(var item in lbBreakfast.SelectedItems)
-            {
-                lbOrderCart.Items.Add(item);
 
-            }
-            foreach (var item in lbLunch.SelectedItems)
+            foreach(object item in lbBreakfast.Items)
             {
-                lbOrderCart.Items.Add(item);
+                if (removeFromQuantity(item))
+                {
+                    lbOrderCart.Items.Add(item.ToString());
+                }
             }
 
+            foreach (object item in lbBreakfast.Items)
+            {
+                if (removeFromQuantity(item))
+                {
+                    lbOrderCart.Items.Add(item.ToString());
+                }
+            }
+
+            setAmountDue();
         }
 
         private void lbLunch_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,21 +137,125 @@ namespace Mealz_Demo
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //This button should undo what the add button does
-            foreach(var item in lbOrderCart.SelectedItems)
+            foreach(object item in lbOrderCart.Items)
             {
-                lbOrderCart.Items.Remove(item);
+                addToQuantity(item);
             }
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-          //This button should just navigate to frmTransaction
+            //This button should just navigate to frmTransaction
+
+            frmTransactions frmTransactions = new frmTransactions();
+            frmTransactions.Show();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private Boolean addToQuantity(object item)
+        {
+            int quantity = getStockQuantity(item);
+
+            try
+            {
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
+
+                comm.Parameters.AddWithValue("@quantity", quantity);
+                comm.Parameters.AddWithValue("@stock_id", item.ToString());
+
+                comm.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
+        }
+
+        private Boolean removeFromQuantity(object item)
+        {
+            try
+            {
+                int quantity = getStockQuantity(item) - 1;
+
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
+
+                comm.Parameters.AddWithValue("@quantity", quantity);
+                comm.Parameters.AddWithValue("@stock_id", item.ToString());
+
+                comm.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private int getStockQuantity(object item)
+        {
+            int quantity = 0;
+
+            try
+            {
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                comm = new SqlCommand("SELECT * FROM SET tblStock WHERE stock_name = @stock_name", conn);
+
+                comm.Parameters.AddWithValue("@stock_name", item.ToString());
+                SqlDataReader dataReader = comm.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+
+                    quantity += Int32.Parse(dataReader["quantity"].ToString());
+                }
+
+                dataReader.Close();
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                return quantity;
+            }
+
+            return quantity;
+        }
+
+        private Boolean setAmountDue()
+        {
+            try
+            {
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                comm = new SqlCommand("UPDATE tblStudents SET amountDue = @amountDue WHERE studentId = @studentId", conn);
+
+                comm.Parameters.AddWithValue("@studentId", Form1.Globals.StudID);
+                comm.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
         }
     }
 }
