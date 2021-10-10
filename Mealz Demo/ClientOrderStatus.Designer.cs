@@ -33,6 +33,7 @@ namespace Mealz_Demo
             this.lblClientStatHeading = new System.Windows.Forms.Label();
             this.lblOrderStatus = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,7 @@ namespace Mealz_Demo
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBack.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnBack.Location = new System.Drawing.Point(551, 572);
+            this.btnBack.Location = new System.Drawing.Point(483, 572);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(140, 41);
             this.btnBack.TabIndex = 2;
@@ -52,7 +53,7 @@ namespace Mealz_Demo
             this.lblClientStatHeading.AutoSize = true;
             this.lblClientStatHeading.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.lblClientStatHeading.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblClientStatHeading.Location = new System.Drawing.Point(300, 25);
+            this.lblClientStatHeading.Location = new System.Drawing.Point(302, 54);
             this.lblClientStatHeading.Name = "lblClientStatHeading";
             this.lblClientStatHeading.Size = new System.Drawing.Size(146, 32);
             this.lblClientStatHeading.TabIndex = 5;
@@ -77,12 +78,24 @@ namespace Mealz_Demo
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnRefresh.Location = new System.Drawing.Point(113, 572);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(140, 41);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // ClientOrderStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(746, 645);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblClientStatHeading);
             this.Controls.Add(this.lblOrderStatus);
@@ -101,5 +114,6 @@ namespace Mealz_Demo
         private System.Windows.Forms.Label lblClientStatHeading;
         private System.Windows.Forms.Label lblOrderStatus;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
