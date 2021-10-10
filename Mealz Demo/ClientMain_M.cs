@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace Mealz_Demo
 {
-    public partial class frmPayment : Form
+    public partial class ClientMain_M : Form
     {
-        public frmPayment()
+        public ClientMain_M()
         {
             InitializeComponent();
-        }
-
-        private void frmPayment_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

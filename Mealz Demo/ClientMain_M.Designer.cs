@@ -1,7 +1,7 @@
 ﻿
 namespace Mealz_Demo
 {
-    partial class frmPayment
+    partial class ClientMain_M
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace Mealz_Demo
         {
             this.SuspendLayout();
             // 
-            // frmPayment
+            // ClientMain_M
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmPayment";
-            this.Text = "frmPayment";
-            this.Load += new System.EventHandler(this.frmPayment_Load);
+            this.ClientSize = new System.Drawing.Size(1001, 612);
+            this.Name = "ClientMain_M";
+            this.Text = "ClientMain_M";
             this.ResumeLayout(false);
 
         }
