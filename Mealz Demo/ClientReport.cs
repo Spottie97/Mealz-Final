@@ -27,22 +27,18 @@ namespace Mealz_Demo
 
         private void ClientReport_Load(object sender, EventArgs e)
         {
-            sqlconnection = new SqlConnection(ConnectionString);
-            Query = "SELECT * from ReportHistoryClient WHERE user_id=@StudentNum";
-            sqlcommand = new SqlCommand(Query, sqlconnection);
-            sqladapter = new SqlDataAdapter();
-            datatable = new DataTable();
-            sqladapter.SelectCommand = sqlcommand;
-            sqladapter.Fill(datatable);
-            dbHistory.DataSource = datatable;
+            searchData();
         }
 
-        private void btnTotal_Click(object sender, EventArgs e)
+        public void searchData()
         {
             sqlconnection = new SqlConnection(ConnectionString);
-            string query = "SELECT SUM(Total) FROM tblorder_detail WHERE StudentNum = @StudentNum";
-            SqlCommand comm = new SqlCommand(query,sqlconnection);
-            //comm.Parameters.Add("@StudentNum", SqlDbType.Int).Value;
+            Query = "SELECT * from ReportHistoryClient WHERE user_id='" + StudentNum + "'";
+            sqlcommand = new SqlCommand(Query, sqlconnection);
+            sqladapter = new SqlDataAdapter(sqlcommand);
+            datatable = new DataTable();
+            sqladapter.Fill(datatable);
+            dbHistory.DataSource = datatable;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
