@@ -300,6 +300,7 @@ namespace Mealz_Demo
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Create_NewAcc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create_NewAcc";
             this.ResumeLayout(false);
             this.PerformLayout();

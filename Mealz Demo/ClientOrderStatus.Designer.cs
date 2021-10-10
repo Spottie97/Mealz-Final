@@ -53,11 +53,11 @@ namespace Mealz_Demo
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Mealz_Demo.Properties.Resources.Mealz_logos_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(411, 386);
+            this.pictureBox1.Size = new System.Drawing.Size(510, 303);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // label1
@@ -67,7 +67,7 @@ namespace Mealz_Demo
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(107, 287);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 46);
+            this.label1.Size = new System.Drawing.Size(329, 45);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ready for collection";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,25 +76,6 @@ namespace Mealz_Demo
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblOrderStatus
-            // 
-            this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOrderStatus.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblOrderStatus.Location = new System.Drawing.Point(218, 453);
-            this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(321, 25);
-            this.lblOrderStatus.TabIndex = 3;
-            this.lblOrderStatus.Text = "Your Order is being made...hang tight...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(113, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(510, 303);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // ClientOrderStatus
             // 

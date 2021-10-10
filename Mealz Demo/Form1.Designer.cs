@@ -80,6 +80,7 @@ namespace Mealz_Demo
             this.txtStudentNum.Name = "txtStudentNum";
             this.txtStudentNum.Size = new System.Drawing.Size(201, 27);
             this.txtStudentNum.TabIndex = 4;
+            this.txtStudentNum.TextChanged += new System.EventHandler(this.txtStudentNum_TextChanged);
             this.txtStudentNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentNum_KeyPress);
             // 
             // lblLoginStudentNum
@@ -152,6 +153,7 @@ namespace Mealz_Demo
             this.Controls.Add(this.btnLogin);
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginPic1)).EndInit();

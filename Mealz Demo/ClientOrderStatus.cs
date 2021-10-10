@@ -49,9 +49,6 @@ namespace Mealz_Demo
             ds = new DataSet();
             comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id = 35023740", conn);
 
-            adapt.SelectCommand = comm;// kyk net hier
-            adapt.Fill(ds, "tblOrder");// kyk net hier
-
             red = comm.ExecuteReader();
 
             while (red.Read() && test)
