@@ -25,7 +25,7 @@ namespace Mealz_Demo
             //The Global variable used is StudID(if you are having trouble with it let me know its under Form1).
             //The checkbox is a required field and needs to be checked before they can confirm the order, by clicking confirm they SQL database order status should be updated to indicate order was received.
 
-
+            //Insert into tblOrder user_id and Order_date
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
