@@ -14,5 +14,38 @@ namespace Mealz_Demo
         {
             InitializeComponent();
         }
+
+        private void ClientMain_M_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void orderMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientOrderMenu myCon = new ClientOrderMenu();
+            myCon.MdiParent = this;
+            myCon.Show();
+
+        }
+
+        private void orderStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientOrderStatus myCon = new ClientOrderStatus();
+            myCon.MdiParent = this;
+            myCon.Show();
+        }
+
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientReport myCon = new ClientReport();
+            myCon.MdiParent = this;
+            myCon.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.Globals.StudID = "";
+            Application.Exit();
+        }
     }
 }

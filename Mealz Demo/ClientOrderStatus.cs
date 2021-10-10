@@ -13,6 +13,7 @@ namespace Mealz_Demo
     {
         private int ticks;
         Boolean test = true;
+        string StudentNum = Form1.Globals.StudID;
 
         public ClientOrderStatus()
         {
@@ -41,13 +42,13 @@ namespace Mealz_Demo
         }
         public void LoadAll(Boolean test)
         {
-            conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
 
             conn.Open();
 
             adapt = new SqlDataAdapter();
             ds = new DataSet();
-            comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id = 35023740", conn);
+            comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id = @StudentNum", conn);
 
             red = comm.ExecuteReader();
 
@@ -64,7 +65,9 @@ namespace Mealz_Demo
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            //kry nog die form vir die 
+            ClientMain_M BackToMain = new ClientMain_M();
+            BackToMain.Show();
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -85,7 +88,7 @@ namespace Mealz_Demo
                     }
                 }
                 timer1.Dispose();
-            }  
+            } 
         }
     }
 }

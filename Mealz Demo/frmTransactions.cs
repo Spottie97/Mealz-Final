@@ -18,46 +18,15 @@ namespace Mealz_Demo
 
         private void frmTransactions_Load(object sender, EventArgs e)
         {
-            // Form myForm = new Form();
+            //We need the Order/Cart list to display
+            //it needs to update the SQL database with the quantity of items bought by subtracting it from the Stock table
+            //It needs to update the SQL database with the Total balance of that student for the month and the total needs to be displayed in the label
+            //In the dataViewGrid we need to filter through the sql database based on Student Number to show all the transactions.
+            //I have declared a Global variable that holds on to the student number that was logged in.
+            //The Global variable used is StudID(if you are having trouble with it let me know its under Form1).
+            //The checkbox is a required field and needs to be checked before they can confirm the order, by clicking confirm they SQL database order status should be updated to indicate order was received.
 
-            string studentId = ""; // string studentId = myForm.getStudentId();
-            label1.Text = "studentName's transactions";
 
-            string sqlConnectionString = ""; // Replace "" with the connection string to your database.
-            SqlConnection sqlConnection = new SqlConnection(sqlConnectionString); // Replace "" with sqlConnectionString
-
-            sqlConnection.Open();
-
-            string selectTransactions = "SELECT * FROM table WHERE student_id=@student_id";
-            SqlCommand sqlCommand = new SqlCommand(selectTransactions, sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("@student_id", studentId);
-
-            SqlDataReader dataReader = sqlCommand.ExecuteReader();
-
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    /*
-                       GetString(index)
-
-                        Add a dataReader.GetString(index) for every single column that you want to display in the textBox.
-                     */
-
-                    string transaction = "\n" + dataReader.GetString(0) + "\t" + dataReader.GetString(0);
-                    textBox1.AppendText(transaction);
-                }
-            }
-
-            dataReader.Close();
-
-            sqlConnection.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace Mealz_Demo
 {
-    public partial class frmUsers_M : Form
+    public partial class ClientReport : Form
     {
-        public frmUsers_M()
+        public ClientReport()
         {
             InitializeComponent();
         }
 
-        private void frmUsers_M_Load(object sender, EventArgs e)
+        private void ClientReport_Load(object sender, EventArgs e)
         {
 
         }
