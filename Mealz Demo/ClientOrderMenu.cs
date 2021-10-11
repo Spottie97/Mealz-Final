@@ -34,7 +34,7 @@ namespace Mealz_Demo
 
                 conn.Open();
 
-                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price, menu FROM tblStock WHERE menu = 1 AND stock_Id LIKE 'BR%'", conn);
+                comm = new SqlCommand("SELECT stock_Id, stock_name, stock_price, menu FROM tblStock WHERE menu = 1 AND stock_Id LIKE 'BR%'", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -42,13 +42,12 @@ namespace Mealz_Demo
                 adapt.Fill(ds, "tblStock");
 
                 red = comm.ExecuteReader();
-                lbBreakfast.Items.Add("============================================");
 
                 while (red.Read())
                 {
                     if (red.HasRows)
                     {
-                        lbBreakfast.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        clbBreakfast.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
                         breakfastStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
@@ -57,7 +56,7 @@ namespace Mealz_Demo
 
                 ///////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_Id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'IM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -66,27 +65,21 @@ namespace Mealz_Demo
 
                 red = comm.ExecuteReader();
 
-                lbLunch.Items.Add("The Meats on the menu");
-                lbLunch.Items.Add("============================================");
-
                 while (red.Read())
                 {
                     if (red.HasRows)
                     {
-                        lbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        clbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
                         lunchDinnerStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
 
-                lbLunch.Items.Add("");
-                lbLunch.Items.Add("Non Meats");
-                lbLunch.Items.Add("=============================================");
 
                 red.Close();
 
                 //////////////////////////////////////////////////////////////////
 
-                comm = new SqlCommand("SELECT stock_id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND menu = 1", conn);
+                comm = new SqlCommand("SELECT stock_Id, stock_name, stock_price,menu FROM tblStock WHERE stock_Id LIKE 'NM%' AND menu = 1", conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
@@ -99,7 +92,7 @@ namespace Mealz_Demo
                 {
                     if (red.HasRows)
                     {
-                        lbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
+                        clbLunch.Items.Add(red.GetValue(1) + "\t" + "\t" + "R " + red.GetValue(2));
                         lunchDinnerStockIDs.Add(red.GetValue(0).ToString());
                     }
                 }
@@ -116,109 +109,19 @@ namespace Mealz_Demo
             }
         }
 
-        private void btnMenuAdd_Click(object sender, EventArgs e)
-        {
-            foreach (string item in lbBreakfast.Items)
-            {
-
-                if (removeFromQuantity(item))
-                {
-                    lbOrderCart.Items.Add(item.ToString());
-                }
-            }
-
-            foreach (string item in lbLunch.Items)
-            {
-                if (removeFromQuantity(item))
-                {
-                    lbOrderCart.Items.Add(item.ToString());
-                }
-            }
-        }
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-            //This button should add the selected item in the menu list to the order/cart list and then update the SQl database to show the item was removed from stock quantity
-
-
-
-
-            for (int i = 0; i < lbBreakfast.Items.Count; i++)
-            {
-
-                if (removeFromQuantity(item))
-                {
-                    lbOrderCart.Items.Add(item);
-                }
-            }
-
-            for (int i = 0; i < lbLunch.Items.Count; i++)
-            {
-                if (removeFromQuantity(item))
-                {
-                    lbOrderCart.Items.Add(item.ToString());
-                }
-            }
-
-            //setAmountDue();
-
-        }
-
-    
-
-        private void lbLunch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-        foreach (string item in lbOrderCart.Items)
-        {
-            addToQuantity(item);
-        }
-        }
-
-        private void btnPayment_Click(object sender, EventArgs e)
-        {
-        for (int i = 0; i < lbBreakfast.Items.Count; i++)
-        {
-            string stockID = breakfastStockIDs[i];
-            removeFromQuantity(stockID);
-        }
-        for (int i = 0; i < lbLunch.Items.Count; i++)
-        {
-            string stockID = lunchDinnerStockIDs[i];
-            removeFromQuantity(stockID);
-        }
-
-        //This button should just navigate to frmTransaction
-
-        ClientOrderStatus status = new ClientOrderStatus();
-        status.Show();
-        this.Close();
-
-        //This button should just navigate to frmTransaction
-        //add to Tblorder_detail (stock_id, stock_quantity)
-        //subtract from tblStock (stock_quantity - stock Quantity bought)
-
-        }
-
         
 
 
         private Boolean addToQuantity(string item)
         {
-            int quantity = getStockQuantity(item);
+            int quantity = getStockQuantity(item)+1;
 
             try
             {
                 conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
-                comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
+                comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_Id = @stock_id", conn);
                 
-                comm.Parameters.AddWithValue("@quantity", quantity+1);
+                comm.Parameters.AddWithValue("@quantity", quantity);
                 comm.Parameters.AddWithValue("@stock_id", item);
 
             comm.ExecuteNonQuery();
@@ -241,7 +144,7 @@ namespace Mealz_Demo
             int quantity = getStockQuantity(item) - 1;
 
             conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
-            comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_id = @stock_id", conn);
+            comm = new SqlCommand("UPDATE tblStock SET quantity = @quantity WHERE stock_Id = @stock_id", conn);
 
             comm.Parameters.AddWithValue("@quantity", quantity);
             comm.Parameters.AddWithValue("@stock_id", item);
@@ -267,15 +170,15 @@ namespace Mealz_Demo
         try
         {
             conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
-            comm = new SqlCommand("SELECT * FROM SET tblStock WHERE stock_id = @stock_id", conn);
+            comm = new SqlCommand("SELECT * FROM SET tblStock WHERE stock_Id = @stock_id", conn);
 
-            comm.Parameters.AddWithValue("@stock_id", stockID);
+            comm.Parameters.AddWithValue("@stock_d", stockID);
             SqlDataReader dataReader = comm.ExecuteReader();
 
             if (dataReader.HasRows)
             {
 
-                quantity += Int32.Parse(dataReader["quantity"].ToString());
+                quantity += Int32.Parse(dataReader.GetValue(0).ToString());
             }
 
             dataReader.Close();
@@ -290,27 +193,111 @@ namespace Mealz_Demo
             return quantity;
         }
 
-        /*private Boolean setAmountDue()
+        private Boolean placeOrder()
         {
-        try
-        {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
-            comm = new SqlCommand("UPDATE tblStudents SET amountDue = @amountDue WHERE studentId = @studentId", conn);
+            try
+            {
+                string sqlconnectionString = @"Data Source =.; Initial Catalog = Mealz_db; Integrated Security = True";
+                SqlConnection sqlConnection = new SqlConnection(sqlconnectionString);
 
-            comm.Parameters.AddWithValue("@studentId", Form1.Globals.StudID);
-            comm.ExecuteNonQuery();
+                sqlConnection.Open();
 
-            conn.Close();
+                string sqlOrderBeingPrepared = "INSERT INTO tblOrder(user_id, order_done, order_collected, order_date) VALUES(@student_id, @order_done, @order_collect, @order_date";
+                SqlCommand sqlCommand = new SqlCommand(sqlOrderBeingPrepared, sqlConnection);
+
+                sqlCommand.Parameters.AddWithValue("@user_id", Form1.Globals.StudID);
+                sqlCommand.Parameters.AddWithValue("@order_done", 0);
+                sqlCommand.Parameters.AddWithValue("@order_collect", 0);
+                sqlCommand.Parameters.AddWithValue("@order_date", DateTime.Now.ToString("yyyy/mm/dd"));
+                sqlCommand.ExecuteNonQuery();
+
+                sqlConnection.Close();
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            return true;
         }
-        catch (Exception e)
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            Console.WriteLine(e);
-            return false;
+            for(int i = 0; i<clbBreakfast.Items.Count;i++)
+            {
+                if(clbBreakfast.GetItemChecked(i))
+                {
+                    lbOrderCart.Items.Add(clbBreakfast.Items[i].ToString());
+                    removeFromQuantity(breakfastStockIDs[i]);
+
+                }
+            }
+            for (int i = 0; i < clbLunch.Items.Count; i++)
+            {
+                if (clbLunch.GetItemChecked(i))
+                {
+                    lbOrderCart.Items.Add(clbLunch.Items[i].ToString()); 
+                    removeFromQuantity(lunchDinnerStockIDs[i]);
+
+                }
+            }
+            /*foreach (string item in clbBreakfast.SelectedItems)
+            {
+                lbOrderCart.Items.Add(item);
+
+                int index = clbBreakfast.Items.IndexOf(item);
+                removeFromQuantity(breakfastStockIDs[index]);
+               
+            }
+
+            foreach (string item in clbLunch.SelectedItems)
+            {
+                lbOrderCart.Items.Add(item);
+
+                int index = clbLunch.Items.IndexOf(item);
+                removeFromQuantity(lunchDinnerStockIDs[index]);
+
+            }*/
         }
 
-        return true;
+        private void btnRemove_Click_1(object sender, EventArgs e)
+        {
+            foreach (string item in lbOrderCart.Items)
+            {
+                addToQuantity(item);
+            }
+            foreach (object item in lbOrderCart.SelectedItems)
+            {
+                lbOrderCart.Items.Remove(item);
+            }
+        }
 
-        }*/
+        private void btnPayment_Click_1(object sender, EventArgs e)
+        {
+            placeOrder();
+            for (int i = 0; i < clbBreakfast.Items.Count; i++)
+            {
+                string stockID = breakfastStockIDs[i];
+                removeFromQuantity(stockID);
+            }
+            for (int i = 0; i < clbLunch.Items.Count; i++)
+            {
+                string stockID = lunchDinnerStockIDs[i];
+                removeFromQuantity(stockID);
+            }
+
+            //This button should just navigate to frmTransaction
+
+            ClientOrderStatus status = new ClientOrderStatus();
+            status.Show();
+            this.Close();
+
+            //This button should just navigate to frmTransaction
+            //add to Tblorder_detail (stock_id, stock_quantity)
+            //subtract from tblStock (stock_quantity - stock Quantity bought)
+        }
+
     }
 }
 

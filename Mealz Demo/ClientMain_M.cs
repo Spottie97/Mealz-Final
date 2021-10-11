@@ -37,9 +37,9 @@ namespace Mealz_Demo
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientReport myCon = new ClientReport();
-            myCon.MdiParent = this;
-            myCon.Show();
+            ClientReport ClientReport = new ClientReport();
+            ClientReport.MdiParent = this;
+            ClientReport.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)

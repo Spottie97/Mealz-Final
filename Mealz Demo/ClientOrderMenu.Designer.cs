@@ -39,10 +39,10 @@ namespace Mealz_Demo
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lbOrderCart = new System.Windows.Forms.ListBox();
-            this.lbBreakfast = new System.Windows.Forms.ListBox();
-            this.lbLunch = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.clbBreakfast = new System.Windows.Forms.CheckedListBox();
+            this.clbLunch = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // lblMenuHeading
@@ -65,6 +65,7 @@ namespace Mealz_Demo
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // lblOrderHeading
             // 
@@ -86,6 +87,7 @@ namespace Mealz_Demo
             this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
             // 
             // btnPayment
             // 
@@ -97,6 +99,7 @@ namespace Mealz_Demo
             this.btnPayment.TabIndex = 6;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = true;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click_1);
             // 
             // btnClose
             // 
@@ -119,24 +122,6 @@ namespace Mealz_Demo
             this.lbOrderCart.Size = new System.Drawing.Size(247, 244);
             this.lbOrderCart.TabIndex = 11;
             // 
-            // lbBreakfast
-            // 
-            this.lbBreakfast.FormattingEnabled = true;
-            this.lbBreakfast.ItemHeight = 15;
-            this.lbBreakfast.Location = new System.Drawing.Point(23, 91);
-            this.lbBreakfast.Name = "lbBreakfast";
-            this.lbBreakfast.Size = new System.Drawing.Size(247, 244);
-            this.lbBreakfast.TabIndex = 12;
-            // 
-            // lbLunch
-            // 
-            this.lbLunch.FormattingEnabled = true;
-            this.lbLunch.ItemHeight = 15;
-            this.lbLunch.Location = new System.Drawing.Point(298, 90);
-            this.lbLunch.Name = "lbLunch";
-            this.lbLunch.Size = new System.Drawing.Size(247, 244);
-            this.lbLunch.TabIndex = 13;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -157,16 +142,32 @@ namespace Mealz_Demo
             this.label2.TabIndex = 15;
             this.label2.Text = "Breakfast";
             // 
+            // clbBreakfast
+            // 
+            this.clbBreakfast.FormattingEnabled = true;
+            this.clbBreakfast.Location = new System.Drawing.Point(12, 90);
+            this.clbBreakfast.Name = "clbBreakfast";
+            this.clbBreakfast.Size = new System.Drawing.Size(247, 256);
+            this.clbBreakfast.TabIndex = 16;
+            // 
+            // clbLunch
+            // 
+            this.clbLunch.FormattingEnabled = true;
+            this.clbLunch.Location = new System.Drawing.Point(298, 90);
+            this.clbLunch.Name = "clbLunch";
+            this.clbLunch.Size = new System.Drawing.Size(247, 256);
+            this.clbLunch.TabIndex = 17;
+            // 
             // ClientOrderMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(843, 425);
+            this.Controls.Add(this.clbLunch);
+            this.Controls.Add(this.clbBreakfast);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbLunch);
-            this.Controls.Add(this.lbBreakfast);
             this.Controls.Add(this.lbOrderCart);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPayment);
@@ -206,5 +207,7 @@ namespace Mealz_Demo
         private ListBox lbLunch;
         private Label label1;
         private Label label2;
+        private CheckedListBox clbBreakfast;
+        private CheckedListBox clbLunch;
     }
 }
