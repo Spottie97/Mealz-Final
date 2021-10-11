@@ -35,7 +35,8 @@ namespace Mealz_Demo
         DataSet ds;
         SqlDataAdapter adapt;
         SqlDataReader red;
-        
+
+        int amountDue = 0;
 
         private void ClientOrderMenu_Load(object sender, EventArgs e)
         {
@@ -263,5 +264,7 @@ namespace Mealz_Demo
             DateTime myDate = new DateTime();
             date = myDate.ToString();
         }
+
     }
 }
+

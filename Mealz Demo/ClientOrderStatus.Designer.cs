@@ -41,21 +41,21 @@ namespace Mealz_Demo
             // 
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBack.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnBack.Location = new System.Drawing.Point(452, 519);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Location = new System.Drawing.Point(396, 389);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(88, 36);
+            this.btnBack.Size = new System.Drawing.Size(77, 27);
             this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Close";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Mealz_Demo.Properties.Resources.Mealz_logos_transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 74);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(510, 303);
+            this.pictureBox1.Size = new System.Drawing.Size(446, 227);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -65,9 +65,9 @@ namespace Mealz_Demo
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(107, 287);
+            this.label1.Location = new System.Drawing.Point(94, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 45);
+            this.label1.Size = new System.Drawing.Size(274, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ready for collection";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,14 +79,13 @@ namespace Mealz_Demo
             // 
             // ClientOrderStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(552, 568);
+            this.ClientSize = new System.Drawing.Size(483, 426);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ClientOrderStatus";
             this.Text = "Order Status";
             this.Load += new System.EventHandler(this.ClientOrderStatus_Load);
