@@ -38,6 +38,7 @@ namespace Mealz_Demo
             this.btnBack = new System.Windows.Forms.Button();
             this.txtStudentNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblHeadingPassRec
@@ -66,7 +67,7 @@ namespace Mealz_Demo
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(197, 27);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 1;
             // 
             // lblPassCell
             // 
@@ -80,12 +81,12 @@ namespace Mealz_Demo
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(141, 252);
+            this.txtNumber.Location = new System.Drawing.Point(175, 252);
             this.txtNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumber.MaxLength = 10;
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(197, 27);
-            this.txtNumber.TabIndex = 8;
+            this.txtNumber.Size = new System.Drawing.Size(163, 27);
+            this.txtNumber.TabIndex = 2;
             this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
             this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
@@ -97,7 +98,7 @@ namespace Mealz_Demo
             this.btnValidate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(202, 47);
-            this.btnValidate.TabIndex = 9;
+            this.btnValidate.TabIndex = 3;
             this.btnValidate.Text = "Validate Information";
             this.btnValidate.UseVisualStyleBackColor = true;
             this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
@@ -120,7 +121,7 @@ namespace Mealz_Demo
             this.txtStudentNum.MaxLength = 8;
             this.txtStudentNum.Name = "txtStudentNum";
             this.txtStudentNum.Size = new System.Drawing.Size(197, 27);
-            this.txtStudentNum.TabIndex = 12;
+            this.txtStudentNum.TabIndex = 0;
             this.txtStudentNum.TextChanged += new System.EventHandler(this.txtStudentNum_TextChanged);
             this.txtStudentNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudentNum_KeyPress);
             // 
@@ -134,22 +135,36 @@ namespace Mealz_Demo
             this.label1.TabIndex = 11;
             this.label1.Text = "Student Number";
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(141, 252);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(197, 27);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "+27";
+            // 
             // Pass_Recovery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(536, 403);
+            this.Controls.Add(this.txtNumber);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtStudentNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnValidate);
-            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblPassCell);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassEmail);
             this.Controls.Add(this.lblHeadingPassRec);
             this.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Pass_Recovery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -171,5 +186,6 @@ namespace Mealz_Demo
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtStudentNum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

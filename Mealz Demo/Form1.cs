@@ -36,7 +36,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
                 conn.Open();
 
@@ -93,21 +93,20 @@ namespace Mealz_Demo
 
         }
 
-            private void lblLoginCreateAcc_Click(object sender, EventArgs e)
-            {
-                Create_NewAcc myCreate = new Create_NewAcc();
-                myCreate.Show();
-                this.Hide();
-            }
+        private void lblLoginCreateAcc_Click(object sender, EventArgs e)
+        {
+            Create_NewAcc myCreate = new Create_NewAcc();
+            myCreate.Show();
+            this.Hide();
+        }
 
-            private void lblLoginForgetPass_Click(object sender, EventArgs e)
-            {
-                studentnum = txtStudentNum.Text;
+        private void lblLoginForgetPass_Click(object sender, EventArgs e)
+        {
+            studentnum = txtStudentNum.Text;
 
             Pass_Recovery frmRecover = new Pass_Recovery();
             frmRecover.Display(studentnum.ToString());
             frmRecover.Show();
-            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -134,6 +133,18 @@ namespace Mealz_Demo
         private void txtStudentNum_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Create_NewAcc myCreate = new Create_NewAcc();
+            this.Hide();
+            myCreate.Show();
         }
     }
 }

@@ -40,8 +40,6 @@ namespace Mealz_Demo
             try
             {
                 LoadAll();
-
-                MessageBox.Show("Connection successful");
             }
             catch (SqlException error)
             {
@@ -51,7 +49,7 @@ namespace Mealz_Demo
 
         public void LoadAll()
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
             conn.Open();
 
@@ -72,6 +70,7 @@ namespace Mealz_Demo
         {            
             totalItemsTwo = 0;
             totalMoneyTwo = 0;
+            int i = 0;
 
             try
             {
@@ -100,6 +99,7 @@ namespace Mealz_Demo
                 while (red.Read())
                 {
                     convertTwo = red.GetValue(4).ToString();
+                    i++;
 
                     totalItemsTwo = totalItemsTwo + Int32.Parse(convertTwo);
 
@@ -111,7 +111,8 @@ namespace Mealz_Demo
                 }
 
                 label4.Text = "Total Items Sold: " + totalItemsTwo.ToString();
-                label5.Text = "Total Money earned for the day: R " + totalMoneyTwo.ToString();
+                label5.Text = "Total Money earned: R " + totalMoneyTwo.ToString();
+                label7.Text = "Total Orders: " + i.ToString();
 
                 conn.Close();
             }
@@ -221,6 +222,26 @@ namespace Mealz_Demo
         private void button1_Click_1(object sender, EventArgs e)
         {
             LoadAll();
+            label7.Text = "";
+            label5.Text = "";
+            label4.Text = "";
+            label3.Text = "";
+            label2.Text = "";
+            label1.Text = "";
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            btnHelp.Visible = false;
+            btnDone.Visible = true;
+            lstHelp.Visible = true;
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            btnDone.Visible = false;
+            btnHelp.Visible = true;
+            lstHelp.Visible = false;
         }
     }
 }

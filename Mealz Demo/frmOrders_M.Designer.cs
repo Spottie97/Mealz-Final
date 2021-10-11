@@ -40,10 +40,16 @@ namespace Mealz_Demo
             this.dbViewDone = new System.Windows.Forms.DataGridView();
             this.btnReturn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnDisplayOrder = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHelpOne = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.lstHelp = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbViewBusy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbViewDone)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,11 +73,11 @@ namespace Mealz_Demo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 44);
+            this.label1.Location = new System.Drawing.Point(150, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 68);
+            this.label1.Size = new System.Drawing.Size(133, 59);
             this.label1.TabIndex = 9;
             this.label1.Text = "Busy ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -79,19 +85,19 @@ namespace Mealz_Demo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(566, 59);
+            this.label2.Location = new System.Drawing.Point(578, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(336, 38);
+            this.label2.Size = new System.Drawing.Size(329, 45);
             this.label2.TabIndex = 10;
             this.label2.Text = "Ready for collection";
             // 
             // btnReady
             // 
-            this.btnReady.Location = new System.Drawing.Point(337, 459);
+            this.btnReady.Location = new System.Drawing.Point(15, 16);
             this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(94, 29);
+            this.btnReady.Size = new System.Drawing.Size(109, 50);
             this.btnReady.TabIndex = 11;
             this.btnReady.Text = "Ready";
             this.btnReady.UseVisualStyleBackColor = true;
@@ -99,9 +105,9 @@ namespace Mealz_Demo
             // 
             // btnCollected
             // 
-            this.btnCollected.Location = new System.Drawing.Point(534, 459);
+            this.btnCollected.Location = new System.Drawing.Point(15, 128);
             this.btnCollected.Name = "btnCollected";
-            this.btnCollected.Size = new System.Drawing.Size(94, 29);
+            this.btnCollected.Size = new System.Drawing.Size(109, 50);
             this.btnCollected.TabIndex = 12;
             this.btnCollected.Text = "Collected";
             this.btnCollected.UseVisualStyleBackColor = true;
@@ -109,9 +115,9 @@ namespace Mealz_Demo
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(427, 531);
+            this.btnRefresh.Location = new System.Drawing.Point(425, 497);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(94, 29);
+            this.btnRefresh.Size = new System.Drawing.Size(109, 50);
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -120,30 +126,30 @@ namespace Mealz_Demo
             // dbViewBusy
             // 
             this.dbViewBusy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbViewBusy.Location = new System.Drawing.Point(46, 158);
+            this.dbViewBusy.Location = new System.Drawing.Point(61, 149);
             this.dbViewBusy.Name = "dbViewBusy";
             this.dbViewBusy.RowHeadersWidth = 51;
             this.dbViewBusy.RowTemplate.Height = 29;
-            this.dbViewBusy.Size = new System.Drawing.Size(385, 271);
+            this.dbViewBusy.Size = new System.Drawing.Size(310, 350);
             this.dbViewBusy.TabIndex = 14;
             this.dbViewBusy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbViewBusy_CellClick);
             // 
             // dbViewDone
             // 
             this.dbViewDone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbViewDone.Location = new System.Drawing.Point(534, 158);
+            this.dbViewDone.Location = new System.Drawing.Point(593, 149);
             this.dbViewDone.Name = "dbViewDone";
             this.dbViewDone.RowHeadersWidth = 51;
             this.dbViewDone.RowTemplate.Height = 29;
-            this.dbViewDone.Size = new System.Drawing.Size(394, 271);
+            this.dbViewDone.Size = new System.Drawing.Size(310, 350);
             this.dbViewDone.TabIndex = 15;
             this.dbViewDone.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbViewDone_CellClick);
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(110, 531);
+            this.btnReturn.Location = new System.Drawing.Point(15, 72);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(94, 29);
+            this.btnReturn.Size = new System.Drawing.Size(109, 50);
             this.btnReturn.TabIndex = 16;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -152,11 +158,98 @@ namespace Mealz_Demo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 508);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(275, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 20);
+            this.label3.Size = new System.Drawing.Size(377, 62);
             this.label3.TabIndex = 17;
-            this.label3.Text = "net vir manager";
+            this.label3.Text = "Orders that is....";
+            // 
+            // btnDisplayOrder
+            // 
+            this.btnDisplayOrder.Location = new System.Drawing.Point(15, 184);
+            this.btnDisplayOrder.Name = "btnDisplayOrder";
+            this.btnDisplayOrder.Size = new System.Drawing.Size(109, 50);
+            this.btnDisplayOrder.TabIndex = 18;
+            this.btnDisplayOrder.Text = "Display Order";
+            this.btnDisplayOrder.UseVisualStyleBackColor = true;
+            this.btnDisplayOrder.Click += new System.EventHandler(this.btnDisplayOrder_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.btnCollected);
+            this.panel2.Controls.Add(this.btnDisplayOrder);
+            this.panel2.Controls.Add(this.btnReady);
+            this.panel2.Controls.Add(this.btnReturn);
+            this.panel2.Location = new System.Drawing.Point(410, 201);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 247);
+            this.panel2.TabIndex = 19;
+            // 
+            // btnHelpOne
+            // 
+            this.btnHelpOne.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHelpOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnHelpOne.Location = new System.Drawing.Point(-2, 548);
+            this.btnHelpOne.Name = "btnHelpOne";
+            this.btnHelpOne.Size = new System.Drawing.Size(45, 48);
+            this.btnHelpOne.TabIndex = 20;
+            this.btnHelpOne.Text = "?";
+            this.btnHelpOne.UseVisualStyleBackColor = true;
+            this.btnHelpOne.Visible = false;
+            this.btnHelpOne.Click += new System.EventHandler(this.btnHelpOne_Click);
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnHelp.Location = new System.Drawing.Point(-3, 548);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(45, 48);
+            this.btnHelp.TabIndex = 21;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // lstHelp
+            // 
+            this.lstHelp.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lstHelp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstHelp.FormattingEnabled = true;
+            this.lstHelp.ItemHeight = 20;
+            this.lstHelp.Items.AddRange(new object[] {
+            "READY BUTTON",
+            "-------------------------------------------------------",
+            "Moves the order from BUSY table to the ",
+            "READY FOR COLLECTION table.",
+            "=================================",
+            "RETURN BUTTON",
+            "-------------------------------------------------------",
+            "If you selected the wrong order when you pressed",
+            "ready, you must just select the order in the other \t",
+            "table and press the RETURN button to get it back\t",
+            "in the busy table.",
+            "=================================",
+            "COLLECTED BUTTON",
+            "-------------------------------------------------------",
+            "When the user collected their order you press the\t",
+            "COLLECTED button",
+            "=================================",
+            "DISPLAY ORDER BUTTON",
+            "-------------------------------------------------------",
+            "You press DISPLAY ORDER button when you want\t",
+            "to see what the order consists of.",
+            "=================================",
+            "REFRESH BUTTON",
+            "-------------------------------------------------------",
+            "This button just set the forms back to normal."});
+            this.lstHelp.Location = new System.Drawing.Point(297, 151);
+            this.lstHelp.Name = "lstHelp";
+            this.lstHelp.Size = new System.Drawing.Size(375, 340);
+            this.lstHelp.TabIndex = 22;
+            this.lstHelp.Visible = false;
             // 
             // frmOrders_M
             // 
@@ -164,24 +257,26 @@ namespace Mealz_Demo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(955, 592);
+            this.Controls.Add(this.lstHelp);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.btnHelpOne);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.dbViewDone);
             this.Controls.Add(this.dbViewBusy);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnCollected);
-            this.Controls.Add(this.btnReady);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "frmOrders_M";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmOrders_M";
+            this.Text = "Orders";
             this.Load += new System.EventHandler(this.frmOrders_M_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbViewBusy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbViewDone)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +295,10 @@ namespace Mealz_Demo
         private System.Windows.Forms.DataGridView dbViewDone;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnDisplayOrder;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnHelpOne;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.ListBox lstHelp;
     }
 }

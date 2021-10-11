@@ -46,7 +46,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
                 conn.Open();
 
@@ -61,35 +61,37 @@ namespace Mealz_Demo
 
                 while (red.Read() && test)
                 {
-                    /**MessageBox.Show(red.GetValue(0).ToString() + "  " + txtStudentNum.Text);
-                    MessageBox.Show(red.GetValue(1).ToString() + "  " + txtEmail.Text);
-                    MessageBox.Show(red.GetValue(2).ToString() + "  " + txtNumber.Text);
-                    MessageBox.Show(red.GetValue(5).ToString() + "  " + "True");**/
-
-
-                    if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(3).ToString() == "True")
+                    if(txtNumber.Text.StartsWith('0'))
                     {
-                        MessageBox.Show(red.GetValue(6).ToString());        //manager
-                        test = false;
-                        Form1 myOne = new Form1();                        
-                        myOne.Show();
-                        this.Close();
+                        MessageBox.Show("Make sure your number is correct. Remeber +27 is 0.");
                     }
-                    else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(4).ToString() == "True")
+                    else
                     {
-                        MessageBox.Show(red.GetValue(6).ToString());        //employee
-                        test = false; 
-                        Form1 myOne = new Form1();
-                        myOne.Show();
-                        this.Close();
-                    }
-                    else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(5).ToString() == "True")
-                    {
-                        MessageBox.Show(red.GetValue(6).ToString());        //customer
-                        test = false; 
-                        Form1 myOne = new Form1();        
-                        myOne.Show();   
-                        this.Close();                       
+
+                        if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(3).ToString() == "True")
+                        {
+                            MessageBox.Show(red.GetValue(6).ToString());        //manager
+                            test = false;
+                            Form1 myOne = new Form1();
+                            myOne.Show();
+                            this.Close();
+                        }
+                        else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(4).ToString() == "True")
+                        {
+                            MessageBox.Show(red.GetValue(6).ToString());        //employee
+                            test = false;
+                            Form1 myOne = new Form1();
+                            myOne.Show();
+                            this.Close();
+                        }
+                        else if (red.GetValue(0).ToString() == txtStudentNum.Text && red.GetValue(1).ToString() == txtEmail.Text && red.GetValue(2).ToString() == txtNumber.Text && red.GetValue(5).ToString() == "True")
+                        {
+                            MessageBox.Show(red.GetValue(6).ToString());        //customer
+                            test = false;
+                            Form1 myOne = new Form1();
+                            myOne.Show();
+                            this.Close();
+                        }
                     }
                 }
                 if (test)

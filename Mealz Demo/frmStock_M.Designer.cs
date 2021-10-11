@@ -45,15 +45,17 @@ namespace Mealz_Demo
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dbView)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dbView
             // 
             this.dbView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbView.Location = new System.Drawing.Point(46, 12);
+            this.dbView.Location = new System.Drawing.Point(12, 12);
             this.dbView.Name = "dbView";
             this.dbView.RowHeadersWidth = 51;
             this.dbView.RowTemplate.Height = 29;
@@ -64,10 +66,10 @@ namespace Mealz_Demo
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(811, 33);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(725, 442);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(132, 52);
+            this.btnDelete.Size = new System.Drawing.Size(111, 40);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -75,10 +77,10 @@ namespace Mealz_Demo
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(726, 264);
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.Location = new System.Drawing.Point(733, 146);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(132, 52);
+            this.btnUpdate.Size = new System.Drawing.Size(111, 40);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -86,10 +88,10 @@ namespace Mealz_Demo
             // 
             // btnRefrech
             // 
-            this.btnRefrech.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRefrech.Location = new System.Drawing.Point(668, 33);
+            this.btnRefrech.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRefrech.Location = new System.Drawing.Point(726, 497);
             this.btnRefrech.Name = "btnRefrech";
-            this.btnRefrech.Size = new System.Drawing.Size(132, 52);
+            this.btnRefrech.Size = new System.Drawing.Size(110, 40);
             this.btnRefrech.TabIndex = 18;
             this.btnRefrech.Text = "Refresh";
             this.btnRefrech.UseVisualStyleBackColor = true;
@@ -116,7 +118,7 @@ namespace Mealz_Demo
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(724, 208);
+            this.txtSearch.Location = new System.Drawing.Point(704, 85);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(166, 27);
             this.txtSearch.TabIndex = 21;
@@ -125,20 +127,20 @@ namespace Mealz_Demo
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(736, 185);
+            this.label9.Location = new System.Drawing.Point(685, 39);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 20);
+            this.label9.Size = new System.Drawing.Size(219, 31);
             this.label9.TabIndex = 22;
             this.label9.Text = "Search Stock Name";
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(736, 109);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Location = new System.Drawing.Point(725, 386);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(132, 52);
+            this.btnAdd.Size = new System.Drawing.Size(111, 40);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -146,57 +148,57 @@ namespace Mealz_Demo
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(651, 354);
+            this.txtName.Location = new System.Drawing.Point(634, 35);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(125, 27);
+            this.txtName.Size = new System.Drawing.Size(128, 27);
             this.txtName.TabIndex = 29;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(801, 354);
+            this.txtPrice.Location = new System.Drawing.Point(810, 35);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(125, 27);
+            this.txtPrice.Size = new System.Drawing.Size(128, 27);
             this.txtPrice.TabIndex = 30;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(726, 423);
+            this.txtQuantity.Location = new System.Drawing.Point(718, 96);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(125, 27);
+            this.txtQuantity.Size = new System.Drawing.Size(142, 27);
             this.txtQuantity.TabIndex = 31;
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(685, 331);
+            this.label1.Location = new System.Drawing.Point(659, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(64, 28);
             this.label1.TabIndex = 32;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(847, 331);
+            this.label2.Location = new System.Drawing.Point(851, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.Size = new System.Drawing.Size(54, 28);
             this.label2.TabIndex = 33;
             this.label2.Text = "Price";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(758, 400);
+            this.label3.Location = new System.Drawing.Point(742, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.Size = new System.Drawing.Size(88, 28);
             this.label3.TabIndex = 34;
             this.label3.Text = "Quantity";
             // 
@@ -210,27 +212,36 @@ namespace Mealz_Demo
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 35;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.txtQuantity);
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.txtPrice);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-4, 160);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(969, 207);
+            this.panel1.TabIndex = 36;
+            // 
             // frmStock_M
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(955, 592);
+            this.Controls.Add(this.dbView);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnRefrech);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnRefrech);
-            this.Controls.Add(this.dbView);
             this.Name = "frmStock_M";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStock_M";
@@ -238,6 +249,8 @@ namespace Mealz_Demo
             ((System.ComponentModel.ISupportInitialize)(this.dbView)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +274,6 @@ namespace Mealz_Demo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

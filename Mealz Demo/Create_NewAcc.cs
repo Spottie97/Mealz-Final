@@ -29,47 +29,61 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
-                if (Regex.IsMatch(txtEmail.Text, pattern))
+                if (txtName.Text == "" || txtSurname.Text == "" || txtPass.Text == "" || txtNumber.Text == "" || txtEmail.Text == "" || txtStudentNum.Text == "" && (!rbCustomer.Checked || !rbEmployee.Checked || !rbManager.Checked))
                 {
-                    if (txtName.Text == "" || txtSurname.Text == "" || txtPass.Text == "" || txtNumber.Text == "" || txtEmail.Text == "" || txtStudentNum.Text == "" && (!rbCustomer.Checked || !rbEmployee.Checked || !rbManager.Checked))
-                    {
-                        MessageBox.Show("Please make sure all fields contain data.");
-                    }
-                    else
-                    {
-                        if (rbCustomer.Checked)
-                        {
-                            conn.Open();
-                            comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{0},{0},{1},{txtPass.Text})", conn);
-                            goAhead(stnum);
-                        }
-                        else if (rbManager.Checked)
-                        {
-                            if (txtCode.Text == "manager1")
-                            {
-                                conn.Open();
-                                comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{1},{0},{0},{txtPass.Text})", conn);
-                                goAhead(stnum);
-                            }
-                            else { MessageBox.Show("Please enter the Verification Code"); }
-                        }
-                        else if (rbEmployee.Checked)
-                        {
-                            if (txtCode.Text == "employee1")
-                            {
-                                conn.Open();
-                                comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{0},{1},{0},{txtPass.Text})", conn);
-                                goAhead(stnum);
-                            }
-                            else { MessageBox.Show("Please enter the Verification Code"); }
-                        }
-                    }
+                    MessageBox.Show("Please make sure all fields contain data.");
                 }
                 else
                 {
-                    MessageBox.Show("Please make sure your email format is correct");
+                    if (Regex.IsMatch(txtEmail.Text, pattern))
+                    {
+                        if (txtNumber.Text.StartsWith('0'))
+                        {
+                            MessageBox.Show("Make sure your number is correct. Remeber +27 is 0.");
+                        }
+                        else
+                        {
+                            if (txtPass.Text.StartsWith('0'))
+                            {
+                                MessageBox.Show("Make sure your password does not start with 0 as it violates our security protocols!");
+                            }
+                            else
+                            {
+                                if (rbCustomer.Checked)
+                                {
+                                    conn.Open();
+                                    comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{0},{0},{1},{txtPass.Text})", conn);
+                                    goAhead(stnum);
+                                }
+                                else if (rbManager.Checked)
+                                {
+                                    if (txtCode.Text == "manager1")
+                                    {
+                                        conn.Open();
+                                        comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{1},{0},{0},{txtPass.Text})", conn);
+                                        goAhead(stnum);
+                                    }
+                                    else { MessageBox.Show("Please enter the Verification Code"); }
+                                }
+                                else if (rbEmployee.Checked)
+                                {
+                                    if (txtCode.Text == "employee1")
+                                    {
+                                        conn.Open();
+                                        comm = new SqlCommand($"INSERT INTO tblUser(user_id, user_name, user_surname, user_email, user_cell, user_manager, user_employee, user_customer, user_pass) VALUES({txtStudentNum.Text},'{txtName.Text}','{txtSurname.Text}','{txtEmail.Text}',{txtNumber.Text},{0},{1},{0},{txtPass.Text})", conn);
+                                        goAhead(stnum);
+                                    }
+                                    else { MessageBox.Show("Please enter the Verification Code"); }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please make sure your email format is correct");
+                    }
                 }
             }
             catch (SqlException error)
@@ -142,7 +156,7 @@ namespace Mealz_Demo
 
         private void txtNumber_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -173,6 +187,17 @@ namespace Mealz_Demo
         private void Create_NewAcc_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("You can only enter a password that contain letters.");
+            }
         }
     }
 }

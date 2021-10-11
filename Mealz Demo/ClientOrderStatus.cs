@@ -14,10 +14,12 @@ namespace Mealz_Demo
         private int ticks;
         Boolean test = true;
         int StudentNum =Int32.Parse(Form1.Globals.StudID);
+        int meat = Int32.Parse(ClientOrderMenu.Globals.Cheese);
 
         public ClientOrderStatus()
         {
             InitializeComponent();
+            timer2.Start();
         }
 
         SqlConnection conn;
@@ -42,19 +44,19 @@ namespace Mealz_Demo
         }
         public void LoadAll(Boolean test)
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
             conn.Open();
 
             adapt = new SqlDataAdapter();
             ds = new DataSet();
-            comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id='" + StudentNum + "'", conn);
+            comm = new SqlCommand("SELECT order_done FROM tblOrder WHERE user_id='" + StudentNum + "' AND order_num ='" + meat + "'", conn);
 
             red = comm.ExecuteReader();
 
             while (red.Read() && test)
             {
-                if(red.GetValue(1).ToString() == "True")
+                if(red.GetValue(0).ToString() == "True")
                 {
                     label1.Visible = true;
                     this.BackColor = Color.Green;
@@ -65,30 +67,27 @@ namespace Mealz_Demo
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            ClientMain_M BackToMain = new ClientMain_M();
-            BackToMain.Show();
             this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
+           
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
             ticks++;
 
-            while(this.BackColor != Color.Green)
+            label2.Text = meat.ToString();
+            string testTick = ticks.ToString();
+            string myNum = "5";
+
+            if(testTick == myNum)
             {
-                if (ticks/5 == 0)
-                {
-                    try
-                    {
-                        LoadAll(test);
-                    }
-                    catch (SqlException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                timer1.Dispose();
-            } 
+                LoadAll(test);
+            }
         }
     }
 }

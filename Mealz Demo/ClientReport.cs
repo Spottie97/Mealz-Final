@@ -13,7 +13,7 @@ namespace Mealz_Demo
     {
         SqlConnection sqlconnection;
         SqlCommand sqlcommand;
-        string ConnectionString = @"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True";
+        string ConnectionString = @"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True";
         string Query;
         DataSet dataset;
         DataTable datatable;

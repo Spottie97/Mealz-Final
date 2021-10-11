@@ -11,12 +11,8 @@ namespace Mealz_Demo
 {
     public partial class frmOrders_M : Form
     {
-        /**
-        string sqlConnectionString = ""; // Replace "" with the connection string to your database.
-        SqlConnection sqlConnection = new SqlConnection(""); // Replace "" with sqlConnectionString
-        **/
-
         string ordernum;
+        string user_id_display;
 
         public frmOrders_M()
         {
@@ -30,7 +26,7 @@ namespace Mealz_Demo
 
         public void LoadAll()
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
             conn.Open();
 
@@ -58,80 +54,6 @@ namespace Mealz_Demo
 
             conn.Close();
         }
-
-        /**
-        private void frmOrders_M_Load(object sender, EventArgs e)
-        {
-            getOrders();
-        }
-
-        private void getOrders()
-        {
-            ordersBeingPrepared();
-            ordersReady();
-        }
-
-        private void ordersBeingPrepared(string status = "not ready")
-        {
-            sqlConnection.Open();
-
-            string sqlOrdersBeingPrepared = "SELECT * FROM table WHERE status=@status";
-            SqlCommand ordersBeingPrepared = new SqlCommand(sqlOrdersBeingPrepared, sqlConnection);
-
-            ordersBeingPrepared.Parameters.AddWithValue("@status", status);
-
-            SqlDataReader dataReader = ordersBeingPrepared.ExecuteReader();
-
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    /*
-                        0 and 2 are the indexes for the orderNumber and status columns in your database.
-                        
-                        Now, if the order's status isn't at index 2, change the value to 3 or whatever the case may be.
-                     *//**
-
-                    string order = dataReader.GetString(0) + "\t" + dataReader.GetString(2);
-                    lstBusy.Items.Add(order);
-                }
-            }
-
-            dataReader.Close();
-
-            sqlConnection.Close();
-        }
-
-        private void ordersReady(string status = "ready")
-        {
-            sqlConnection.Open();
-
-            string sqlOrdersBeingPrepared = "SELECT * FROM table WHERE status=@status";
-            SqlCommand ordersBeingPrepared = new SqlCommand(sqlOrdersBeingPrepared, sqlConnection);
-
-            ordersBeingPrepared.Parameters.AddWithValue("@status", status);
-
-            SqlDataReader dataReader = ordersBeingPrepared.ExecuteReader();
-
-            if (dataReader.HasRows)
-            {
-                while (dataReader.Read())
-                {
-                    /*
-                        0 and 2 are the indexes for the orderNumber and status columns in your database.
-                        
-                        Now, if the order's status isn't at index 2, change the value to 3 or whatever the case may be.
-                     *//**
-
-                    string order = dataReader.GetString(0) + "\t" + dataReader.GetString(2);
-                    lstBusy.Items.Add(order);
-                }
-            }
-
-            dataReader.Close();
-
-            sqlConnection.Close();
-        }**/
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -162,8 +84,6 @@ namespace Mealz_Demo
             try
             {
                 LoadAll();
-
-                MessageBox.Show("Connection successful");
             }
             catch(SqlException error)
             {
@@ -184,6 +104,7 @@ namespace Mealz_Demo
                 DataGridViewRow selectedRow = dbViewBusy.Rows[index];
 
                 ordernum = selectedRow.Cells[0].Value.ToString();
+                user_id_display = selectedRow.Cells[1].Value.ToString();
             }
             catch (Exception)
             {
@@ -242,6 +163,27 @@ namespace Mealz_Demo
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void btnDisplayOrder_Click(object sender, EventArgs e)
+        {
+            frmDisplayOrder_M frmDiplay = new frmDisplayOrder_M();
+            frmDiplay.Display(ordernum, user_id_display);
+            frmDiplay.Show();
+        }
+
+        private void btnHelpOne_Click(object sender, EventArgs e)
+        {
+            lstHelp.Visible = false;
+            btnHelp.Visible = true;
+            btnHelpOne.Visible = false;
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            lstHelp.Visible = true;
+            btnHelp.Visible = false;
+            btnHelpOne.Visible = true;
         }
     }
 }

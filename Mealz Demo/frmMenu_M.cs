@@ -30,11 +30,9 @@ namespace Mealz_Demo
 
         private void frmMenu_M_Load(object sender, EventArgs e)
         {
-            Boolean test = true;
-
             try
             {
-                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
 
                 conn.Open();
 
@@ -48,7 +46,7 @@ namespace Mealz_Demo
                 red = comm.ExecuteReader();
                 lstOutput.Items.Add("============================================");
                 
-                while (red.Read() && test)
+                while (red.Read())
                 {
                     lstOutput.Items.Add(red.GetValue(0) + "\t" + "\t" + "R " + red.GetValue(1));             
                 }
@@ -99,8 +97,6 @@ namespace Mealz_Demo
                 /////////////////////////////////////////////////////////
 
                 conn.Close();
-
-                MessageBox.Show("Connection successful");
             }
             catch (SqlException error)
             {

@@ -69,10 +69,18 @@ namespace Mealz_Demo
 
         private void dbView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = dbView.Rows[index];
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = dbView.Rows[index];
 
-            employee_delete = selectedRow.Cells[0].Value.ToString();
+                employee_delete = selectedRow.Cells[0].Value.ToString();
+            }
+            catch(Exception) 
+            {
+                MessageBox.Show("You cant select the header");
+            }
+            
         }
     }
 }

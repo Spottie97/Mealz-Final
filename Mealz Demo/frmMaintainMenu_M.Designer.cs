@@ -34,19 +34,22 @@ namespace Mealz_Demo
             this.btnRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dbView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dbView
             // 
             this.dbView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbView.Location = new System.Drawing.Point(12, 12);
+            this.dbView.Location = new System.Drawing.Point(85, 12);
             this.dbView.Name = "dbView";
             this.dbView.RowHeadersWidth = 51;
             this.dbView.RowTemplate.Height = 29;
-            this.dbView.Size = new System.Drawing.Size(861, 305);
+            this.dbView.Size = new System.Drawing.Size(706, 376);
             this.dbView.TabIndex = 0;
             this.dbView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbView_CellClick);
             this.dbView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -54,9 +57,9 @@ namespace Mealz_Demo
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(184, 404);
+            this.btnAdd.Location = new System.Drawing.Point(40, 454);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 47);
+            this.btnAdd.Size = new System.Drawing.Size(145, 61);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -65,9 +68,9 @@ namespace Mealz_Demo
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemove.Location = new System.Drawing.Point(563, 404);
+            this.btnRemove.Location = new System.Drawing.Point(228, 454);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(115, 47);
+            this.btnRemove.Size = new System.Drawing.Size(145, 61);
             this.btnRemove.TabIndex = 2;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -91,23 +94,46 @@ namespace Mealz_Demo
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(5, 409);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(403, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Add or Remove food from the Menu";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnRemove);
+            this.panel2.Location = new System.Drawing.Point(233, -3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(412, 552);
+            this.panel2.TabIndex = 8;
+            // 
             // frmMaintainMenu_M
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(885, 542);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dbView);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "frmMaintainMenu_M";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMaintainMenu_M";
+            this.Text = "Maintain Menu";
             this.Load += new System.EventHandler(this.frmMaintainMenu_M_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbView)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -119,5 +145,7 @@ namespace Mealz_Demo
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
