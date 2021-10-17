@@ -63,7 +63,7 @@ namespace Mealz_Demo
                 {
                     if(txtNumber.Text.StartsWith('0'))
                     {
-                        MessageBox.Show("Make sure your number is correct. Remeber +27 is 0.");
+                        MessageBox.Show("Make sure your number is correct. Remember +27 is 0.");
                     }
                     else
                     {
