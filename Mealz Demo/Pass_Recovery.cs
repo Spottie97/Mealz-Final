@@ -46,7 +46,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db2.0;Integrated Security=True");
 
                 conn.Open();
 

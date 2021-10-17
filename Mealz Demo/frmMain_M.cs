@@ -81,7 +81,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db2.0;Integrated Security=True");
 
                 conn.Open();
 
@@ -130,6 +130,11 @@ namespace Mealz_Demo
             Form1 frmLogin = new Form1();
             frmLogin.Show();
             this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

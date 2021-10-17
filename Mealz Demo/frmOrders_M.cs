@@ -66,7 +66,7 @@ namespace Mealz_Demo
             {
                 conn.Open();
 
-                comm = new SqlCommand("UPDATE tblOrder Set order_done = 1 WHERE order_num = @id", conn);
+                comm = new SqlCommand("Data Source=.;Initial Catalog=Mealz_db2.0;Integrated Security=True", conn);
                 comm.Parameters.AddWithValue("@id", ordernum);
 
                 comm.ExecuteNonQuery();

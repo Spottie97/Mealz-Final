@@ -80,7 +80,7 @@ namespace Mealz_Demo
         {
             ticks++;
 
-            label2.Text = meat.ToString();
+            label1.Text = meat.ToString();
             string testTick = ticks.ToString();
             string myNum = "5";
 

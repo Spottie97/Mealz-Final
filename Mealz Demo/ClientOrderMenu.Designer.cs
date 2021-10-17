@@ -36,7 +36,6 @@ namespace Mealz_Demo
             this.lblMenuHeading = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblOrderHeading = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.lstDisplay = new System.Windows.Forms.ListBox();
             this.lbOrderCart = new System.Windows.Forms.ListBox();
@@ -46,15 +45,14 @@ namespace Mealz_Demo
             this.txtQuan = new System.Windows.Forms.TextBox();
             this.btnTotal = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dbBreackfast)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbLunch)).BeginInit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dbBreackfast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbLunch)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuHeading
             // 
-            this.lblMenuHeading.Location = new System.Drawing.Point(426, 11);
             this.lblMenuHeading.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.lblMenuHeading.Location = new System.Drawing.Point(392, -9);
             this.lblMenuHeading.Name = "lblMenuHeading";
@@ -73,7 +71,7 @@ namespace Mealz_Demo
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblOrderHeading
             // 
@@ -81,22 +79,11 @@ namespace Mealz_Demo
             this.lblOrderHeading.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblOrderHeading.Location = new System.Drawing.Point(731, 75);
             this.lblOrderHeading.Name = "lblOrderHeading";
-            this.lblOrderHeading.Size = new System.Drawing.Size(95, 41);
+            this.lblOrderHeading.Size = new System.Drawing.Size(75, 32);
             this.lblOrderHeading.TabIndex = 3;
             this.lblOrderHeading.Text = "Order";
             // 
-            // btnRemove
-            // 
-            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRemove.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnRemove.Location = new System.Drawing.Point(232, 13);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(143, 59);
-            this.btnRemove.TabIndex = 5;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
+            // btnCheck
             // 
             this.btnCheck.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCheck.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -111,35 +98,27 @@ namespace Mealz_Demo
             // 
             // lstDisplay
             // 
-            // lbOrderCart
-            // 
             this.lstDisplay.FormattingEnabled = true;
-            this.lstDisplay.ItemHeight = 20;
+            this.lstDisplay.ItemHeight = 15;
             this.lstDisplay.Location = new System.Drawing.Point(667, 121);
             this.lstDisplay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstDisplay.Name = "lstDisplay";
-            this.lstDisplay.Size = new System.Drawing.Size(282, 324);
+            this.lstDisplay.Size = new System.Drawing.Size(282, 319);
             this.lstDisplay.TabIndex = 11;
             // 
-            // label1
+            // lbOrderCart
             // 
-            this.label1.Location = new System.Drawing.Point(91, 75);
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Size = new System.Drawing.Size(138, 41);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Breakfast";
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Breakfast";
+            this.lbOrderCart.Location = new System.Drawing.Point(0, 0);
+            this.lbOrderCart.Name = "lbOrderCart";
+            this.lbOrderCart.Size = new System.Drawing.Size(120, 96);
+            this.lbOrderCart.TabIndex = 0;
             // 
-            // label2
+            // lbLunch
             // 
-            this.label2.Location = new System.Drawing.Point(397, 75);
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Size = new System.Drawing.Size(197, 41);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Lunch/Dinner";
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Lunch/Dinner";
+            this.lbLunch.Location = new System.Drawing.Point(0, 0);
+            this.lbLunch.Name = "lbLunch";
+            this.lbLunch.Size = new System.Drawing.Size(120, 96);
+            this.lbLunch.TabIndex = 0;
             // 
             // dbBreackfast
             // 
@@ -168,7 +147,7 @@ namespace Mealz_Demo
             // 
             this.txtQuan.Location = new System.Drawing.Point(250, 440);
             this.txtQuan.Name = "txtQuan";
-            this.txtQuan.Size = new System.Drawing.Size(125, 27);
+            this.txtQuan.Size = new System.Drawing.Size(125, 23);
             this.txtQuan.TabIndex = 20;
             this.txtQuan.TextChanged += new System.EventHandler(this.txtQuan_TextChanged);
             // 
@@ -182,21 +161,34 @@ namespace Mealz_Demo
             this.btnTotal.UseVisualStyleBackColor = true;
             this.btnTotal.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(91, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 41);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Breakfast";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(397, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 41);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Lunch/Dinner";
+            // 
             // ClientOrderMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.ClientSize = new System.Drawing.Size(963, 567);
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClientSize = new System.Drawing.Size(1164, 609);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.txtQuan);
             this.Controls.Add(this.dbLunch);
             this.Controls.Add(this.dbBreackfast);
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(843, 425);
             this.Controls.Add(this.lstDisplay);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnPayment);
-            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblOrderHeading);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblMenuHeading);
@@ -212,7 +204,7 @@ namespace Mealz_Demo
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -226,8 +218,14 @@ namespace Mealz_Demo
 
         private System.Windows.Forms.Label lblMenuHeading;
         private System.Windows.Forms.Button btnAdd;
+        private Label lblOrderHeading;
+
+        public Button btnRemove { get; private set; }
+
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.ListBox lstDisplay;
+        private ListBox lbOrderCart;
+        private ListBox lbLunch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dbBreackfast;
@@ -235,7 +233,9 @@ namespace Mealz_Demo
         private System.Windows.Forms.TextBox txtQuan;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFirst;
+        private System.Windows.Forms.Label lblSecond;
+        private Control btnClose;
+        private Control btnPayment;
     }
 }

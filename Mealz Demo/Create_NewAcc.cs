@@ -29,7 +29,7 @@ namespace Mealz_Demo
 
             try
             {
-                conn = new SqlConnection(@"Data Source=ARRIES-PC\SQLEXPRESS;Initial Catalog=Mealz;Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=.;Initial Catalog=Mealz_db2.0;Integrated Security=True");
 
                 if (txtName.Text == "" || txtSurname.Text == "" || txtPass.Text == "" || txtNumber.Text == "" || txtEmail.Text == "" || txtStudentNum.Text == "" && (!rbCustomer.Checked || !rbEmployee.Checked || !rbManager.Checked))
                 {
@@ -198,6 +198,11 @@ namespace Mealz_Demo
                 e.Handled = true;
                 MessageBox.Show("You can only enter a password that contain letters.");
             }
+        }
+
+        private void lblHeadingCreateNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
